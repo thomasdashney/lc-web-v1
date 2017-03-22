@@ -1,22 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import navigationBgUrl from './images/navigation_bg.jpg'
-import mainBgUrl from './images/main_bg.jpg'
+import { Navigation } from './sections/navigation'
 
-const Navigation = styled.div`
-  background-image: url('${navigationBgUrl}');
-  height: 100%;
-  width: 333px;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  position: absolute;
-`
+import mainBgUrl from './images/main_bg.jpg'
 
 const Main = styled.div`
   background-image: url('${mainBgUrl}');
   background-size: 100% 1865px;
+  @media screen and (max-width: 1200px) {
+    background-size: auto;
+  }
   height: 100%;
   position: absolute;
   left: 332px;
@@ -27,7 +21,9 @@ const Main = styled.div`
 const App = () => (
   <div>
     <Navigation />
-    <Main />
+    <Main>
+      Content Here
+    </Main>
   </div>
 )
 

@@ -6,7 +6,6 @@ module.exports = {
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
     './index.js'
   ],
   output: {
@@ -17,7 +16,6 @@ module.exports = {
   context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   devServer: {
-    hot: true,
     contentBase: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -35,7 +33,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './src/index.html')

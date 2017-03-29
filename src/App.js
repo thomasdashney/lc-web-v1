@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Navigation } from './sections/navigation'
+import { Tour } from './sections/tour'
 
 import mainBgUrl from './images/main_bg.jpg'
 
@@ -22,7 +23,7 @@ const App = () => (
   <div>
     <Navigation />
     <Main>
-      Content Here
+      <Tour />
     </Main>
   </div>
 )

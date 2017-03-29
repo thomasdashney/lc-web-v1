@@ -1,6 +1,12 @@
+const config = require('config')
+const fs = require('fs')
 const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+// https://github.com/lorenwest/node-config/wiki/Webpack-Usage
+const configPath = resolve(__dirname, 'config.json')
+fs.writeFileSync(configPath, JSON.stringify(config))
 
 module.exports = {
   entry: [
@@ -12,6 +18,12 @@ module.exports = {
     filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  resolve: {
+    alias: {
+      config: configPath
+    },
+    modules: ['src/modules', 'node_modules']
   },
   context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',

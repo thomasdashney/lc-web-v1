@@ -1,6 +1,12 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
 import styled from 'styled-components'
 
+import { Admin } from './admin'
 import { Navigation } from './sections/navigation'
 import { Tour } from './sections/tour'
 
@@ -20,12 +26,19 @@ const Main = styled.div`
 `
 
 const App = () => (
-  <div>
-    <Navigation />
-    <Main>
-      <Tour />
-    </Main>
-  </div>
+  <Router>
+    <Switch>
+      <Route path='/admin' component={Admin} />
+      <Route render={() => (
+        <div>
+          <Navigation />
+          <Main>
+            <Tour />
+          </Main>
+        </div>
+      )} />
+    </Switch>
+  </Router>
 )
 
 export default App

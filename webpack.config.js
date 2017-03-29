@@ -29,7 +29,8 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
+    historyApiFallback: true
   },
   module: {
     rules: [

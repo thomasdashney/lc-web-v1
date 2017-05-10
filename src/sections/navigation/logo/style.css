@@ -1,0 +1,10 @@
+.logo {
+  font-family: "Fira Sans";
+  font-size: 40px;
+  text-transform: uppercase;
+  color: rgb(231, 231, 231);
+  font-weight: 500;
+
+  width: 300px;
+  text-align: center;
+}

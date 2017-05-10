@@ -1,0 +1,29 @@
+.navigationLinks {
+  /* ul reset */
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+
+  width: 300px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.navigationLinks li:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.navigationLinks a {
+  text-decoration: none;
+  color: rgb(231, 231, 231);
+  font-size: 26px;
+  font-family: "Fira Sans";
+  font-weight: 400;
+  transition: 300ms font-weight;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+
+.navigationLinks a.active {
+  font-weight: 600;
+}

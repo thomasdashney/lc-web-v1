@@ -40,8 +40,28 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.jpg$/,
+        test: /\.(png|jpg)$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.css$/,
+        include: resolve(__dirname, 'src'),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[path][name]__[local]_[hash:base64:5]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: resolve(__dirname, 'node_modules'),
+        loader: ['style-loader', 'css-loader']
       }
     ]
   },

@@ -19,9 +19,15 @@
   font-size: 26px;
   font-family: "Fira Sans";
   font-weight: 400;
-  transition: 300ms font-weight;
+  opacity: 0.8;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
+  transition: 300ms opacity;
+}
+
+.navigationLinks a.active,
+.navigationLinks a:hover {
+  opacity: 1;
 }
 
 .navigationLinks a.active {

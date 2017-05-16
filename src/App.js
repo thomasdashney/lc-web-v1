@@ -7,6 +7,7 @@ import {
 
 import { Admin } from './admin'
 import { Navigation } from './sections/navigation'
+import { Home } from './sections/home'
 import { Tour } from './sections/tour'
 
 import css from './style.scss'
@@ -20,12 +21,17 @@ class App extends Component {
     }
 
     this.toggleNavigation = this.toggleNavigation.bind(this)
+    this.closeNavigation = this.closeNavigation.bind(this)
   }
 
   toggleNavigation () {
     this.setState({
       navIsOpen: !this.state.navIsOpen
     })
+  }
+
+  closeNavigation () {
+    this.setState({ navIsOpen: false })
   }
 
   render () {
@@ -41,9 +47,14 @@ class App extends Component {
           <Route path='/admin' component={Admin} />
           <Route render={() => (
             <div className={classNames}>
-              <Navigation onNavigationToggle={this.toggleNavigation} />
+              <Navigation
+                onNavigationToggle={this.toggleNavigation}
+                onNavLinkClick={this.closeNavigation}
+              />
+              <div className={css.background} />
               <div className={css.main}>
-                <Tour />
+                <Route exact path='/' component={Home} />
+                <Route exact path='/tour' component={Tour} />
               </div>
             </div>
           )} />

@@ -4,6 +4,10 @@ import css from './style.scss'
 
 const links = [
   {
+    name: 'Home',
+    to: '/'
+  },
+  {
     name: 'Music',
     to: '/music'
   },
@@ -21,11 +25,16 @@ const links = [
   }
 ]
 
-const NavigationLinks = () => (
+const NavigationLinks = ({ onNavLinkClick }) => (
   <ul className={css.navigationLinks}>
     {links.map(({ name, to }, index) => (
       <li key={index}>
-        <NavLink to={to} activeClassName={css.active}>
+        <NavLink
+          exact
+          to={to}
+          activeClassName={css.active}
+          onClick={onNavLinkClick}
+        >
           {name}
         </NavLink>
       </li>

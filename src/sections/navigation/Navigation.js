@@ -5,10 +5,12 @@ import Banner from './banner/Banner'
 import NavigationLinks from './navigation-links/NavigationLinks'
 import SocialNav from './social-nav/SocialNav'
 
-export default ({ onNavigationToggle }) => (
+export default ({ onNavigationToggle, onNavLinkClick }) => (
   <div className={css.navigation}>
     <Banner onNavigationToggle={onNavigationToggle} />
-    <NavigationLinks />
+    <NavigationLinks
+      onNavLinkClick={onNavLinkClick}
+    />
     <SocialNav />
   </div>
 )

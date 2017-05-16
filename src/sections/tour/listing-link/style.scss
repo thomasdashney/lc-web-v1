@@ -1,0 +1,17 @@
+.listingLink {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 7px 10px;
+
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: rgba(50, 50, 50, 0.05);
+  }
+}

@@ -21,24 +21,32 @@ const links = [
   },
   {
     name: 'Merch',
-    to: '/merch'
+    to: 'https://www.bandfan.co/collections/lost-cousins-band-merchandise/',
+    external: true
   }
 ]
 
 const NavigationLinks = ({ onNavLinkClick }) => (
   <ul className={css.navigationLinks}>
-    {links.map(({ name, to }, index) => (
-      <li key={index}>
-        <NavLink
-          exact
-          to={to}
-          activeClassName={css.active}
-          onClick={onNavLinkClick}
-        >
-          {name}
-        </NavLink>
-      </li>
-    ))}
+    {links.map(({ name, to, external }, index) => {
+      return (
+        <li key={index}>
+          {external
+            ? <a href={to} target='_blank'>{name}</a>
+            : (
+              <NavLink
+                exact
+                to={to}
+                activeClassName={css.active}
+                onClick={onNavLinkClick}
+              >
+                {name}
+              </NavLink>
+            )
+          }
+        </li>
+      )
+    })}
   </ul>
 )
 

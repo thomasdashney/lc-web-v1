@@ -1,4 +1,8 @@
-.tourListings {
+.container {
+  padding: 0 10px;
+}
+
+.tourListings, .tourListingsMobile {
   font-family: 'Fira Sans';
   font-size: 14px;
   width: 100%;
@@ -8,25 +12,80 @@
 
   td {
     vertical-align: top;
-    padding: 20px 5px;
   }
 
   tr:not(:first-child) td {
     border-top: 1px solid rgba(151, 151, 151, 0.2);
   }
+
+  .dates {
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .acts {
+    display: block;
+    font-weight: 200;
+    opacity: 0.7;
+  }
 }
 
-.acts {
-  display: block;
-  font-weight: 200;
-  opacity: 0.7;
-}
 
-.dates {
-  > *:not(:first-child) {
+.tourListings {
+  margin-top: 40px;
+
+  td {
+    padding: 20px 5px;
+  }
+
+  .dates > *:not(:first-child) {
     margin-left: 30px;
   }
-  strong {
-    font-weight: 500;
+
+  .listingLink {
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.tourListingsMobile {
+  td {
+    padding: 13px 5px;
+  }
+
+  .dates > *:not(:first-child) {
+    margin-left: 16px;
+  }
+
+  .venue, .acts {
+    margin-top: 8px;
+  }
+
+  .listingLink {
+    display: block;
+    &:not(:first-child) {
+      margin-top: 6px;
+    }
+  }
+}
+
+.listingLink {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 7px 10px;
+  width: auto;
+  white-space: nowrap;
+  text-align: center;
+
+  transition: background-color 300ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(50, 50, 50, 0.05);
   }
 }

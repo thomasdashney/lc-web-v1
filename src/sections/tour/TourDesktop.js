@@ -8,7 +8,7 @@ import css from './style.scss'
 export default ({ tourListings }) => (
   <table className={css.tourListings}>
     <tbody>
-      {Object.keys(tourListings).map(key => {
+      {tourListings.map((listing, key) => {
         const {
           date,
           venue,
@@ -16,7 +16,7 @@ export default ({ tourListings }) => (
           location,
           ticketLink,
           facebookLink
-        } = tourListings[key]
+        } = listing
         const dateMoment = moment(date)
 
         return (

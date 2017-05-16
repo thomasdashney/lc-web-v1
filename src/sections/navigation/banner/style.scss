@@ -3,6 +3,7 @@
 
 .banner {
   h1 {
+    margin-left: 48px;
     font-family: "Fira Sans";
     font-weight: 500;
     text-transform: uppercase;
@@ -10,6 +11,7 @@
     font-size: 28px;
 
     @include breakpoint (laptop-up) {
+      margin-left: 0;
       font-size: 40px;
     }
   }
@@ -43,7 +45,10 @@
   border: none;
   outline: none;
 
-  line-height: 2em;
+  position: absolute;
+  top: 23px;
+  left: 10px;
+
   @include breakpoint (laptop-up) {
     display: none;
   }

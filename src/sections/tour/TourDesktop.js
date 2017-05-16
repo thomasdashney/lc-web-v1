@@ -23,6 +23,8 @@ export default ({ tourListings }) => (
           <tr key={key}>
             <td className={css.dates}>
               <strong>{dateMoment.format('MMM D').toUpperCase()}</strong>
+            </td>
+            <td>
               <strong>{dateMoment.format('ddd').toUpperCase()}</strong>
             </td>
             <td>

@@ -8,6 +8,7 @@ import {
 import { Admin } from './admin'
 import { Navigation } from './sections/navigation'
 import { Home } from './sections/home'
+import { Music } from './sections/music'
 import { Tour } from './sections/tour'
 
 import css from './style.scss'
@@ -54,6 +55,7 @@ class App extends Component {
               <div className={css.background} />
               <div className={css.main}>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/music' component={Music} />
                 <Route exact path='/tour' component={Tour} />
               </div>
             </div>

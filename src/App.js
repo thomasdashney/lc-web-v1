@@ -1,44 +1,56 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom'
-import styled from 'styled-components'
 
 import { Admin } from './admin'
 import { Navigation } from './sections/navigation'
 import { Tour } from './sections/tour'
 
-import mainBgUrl from './images/main_bg.jpg'
+import css from './style.scss'
 
-const Main = styled.div`
-  background-image: url('${mainBgUrl}');
-  background-size: 100% 1865px;
-  @media screen and (max-width: 1200px) {
-    background-size: auto;
+class App extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      navIsOpen: false
+    }
+
+    this.toggleNavigation = this.toggleNavigation.bind(this)
   }
-  height: 100%;
-  position: absolute;
-  left: 332px;
-  top: 0;
-  right: 0;
-`
 
-const App = () => (
-  <Router>
-    <Switch>
-      <Route path='/admin' component={Admin} />
-      <Route render={() => (
-        <div>
-          <Navigation />
-          <Main>
-            <Tour />
-          </Main>
-        </div>
-      )} />
-    </Switch>
-  </Router>
-)
+  toggleNavigation () {
+    this.setState({
+      navIsOpen: !this.state.navIsOpen
+    })
+  }
+
+  render () {
+    const { navIsOpen } = this.state
+    const classNames = [
+      css.siteContainer,
+      navIsOpen ? 'navIsOpen' : ''
+    ].join(' ')
+
+    return (
+      <Router>
+        <Switch>
+          <Route path='/admin' component={Admin} />
+          <Route render={() => (
+            <div className={classNames}>
+              <Navigation onNavigationToggle={this.toggleNavigation} />
+              <div className={css.main}>
+                <Tour />
+              </div>
+            </div>
+          )} />
+        </Switch>
+      </Router>
+    )
+  }
+}
 
 export default App

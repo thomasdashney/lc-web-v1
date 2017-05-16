@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './style.css'
+import css from './style.scss'
 
 import facebookImageUrl from './icons/facebook.png'
 import instagramImageUrl from './icons/instagram.png'

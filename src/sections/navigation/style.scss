@@ -1,0 +1,21 @@
+@import '~styles/_breakpoints';
+@import '~styles/_variables';
+
+.navigation {
+  background-image: url('./navigation_bg.jpg');
+  height: 100%;
+  top: 0;
+  left: -$navigationWidth;
+  width: $navigationWidth;
+  display: inline-block;
+  position: absolute;
+  transition: left $navigationTransitionDuration ease-in-out;
+
+  @include breakpoint(laptop-up) {
+    left: 0;
+  }
+}
+
+:global(.navIsOpen) .navigation {
+  left: 0;
+}

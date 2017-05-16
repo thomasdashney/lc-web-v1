@@ -1,0 +1,50 @@
+@import '~styles/_breakpoints';
+@import '~styles/_variables';
+
+.banner {
+  h1 {
+    font-family: "Fira Sans";
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(231, 231, 231);
+    font-size: 28px;
+
+    @include breakpoint (laptop-up) {
+      font-size: 40px;
+    }
+  }
+
+  > * {
+    display: inline-block;
+  }
+
+  text-align: left;
+  width: 100%;
+  height: $mobileBannerHeight;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  @include breakpoint (laptop-up) {
+    position: relative;
+    width: 300px;
+    height: auto;
+    background-color: transparent;
+    text-align: center;
+  }
+}
+
+.drawerButton {
+  /* button reset */
+  background: transparent;
+  border: none;
+  outline: none;
+
+  line-height: 2em;
+  @include breakpoint (laptop-up) {
+    display: none;
+  }
+}

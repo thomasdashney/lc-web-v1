@@ -44,7 +44,7 @@ module.exports = {
         loader: 'file-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         include: resolve(__dirname, 'src'),
         use: [
           'style-loader',
@@ -55,7 +55,8 @@ module.exports = {
               modules: true,
               localIdentName: '[path][name]__[local]_[hash:base64:5]'
             }
-          }
+          },
+          'sass-loader'
         ]
       },
       {

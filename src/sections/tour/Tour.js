@@ -25,7 +25,7 @@ class Tour extends Component {
   render () {
     return (
       <div>
-        Hello! {this.state.tourListings.map(({ date }) => (<span>{date}</span>))}
+        Tour listings
       </div>
     )
   }

@@ -1,26 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import navigationBgUrl from './navigation_bg.jpg'
-
-import Logo from './logo/Logo'
+import css from './style.scss'
+import Banner from './banner/Banner'
 import NavigationLinks from './navigation-links/NavigationLinks'
 import SocialNav from './social-nav/SocialNav'
 
-const Navigation = styled.div`
-  background-image: url('${navigationBgUrl}');
-  height: 100%;
-  width: 333px;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  position: absolute;
-`
-
-export default () => (
-  <Navigation>
-    <Logo />
+export default ({ onNavigationToggle }) => (
+  <div className={css.navigation}>
+    <Banner onNavigationToggle={onNavigationToggle} />
     <NavigationLinks />
     <SocialNav />
-  </Navigation>
+  </div>
 )

@@ -6,7 +6,9 @@
 
   width: 300px;
   text-align: center;
-  margin-top: 80px;
+  position: absolute;
+  left: 0;
+  top: 160px;
 }
 
 .navigationLinks li:not(:last-child) {

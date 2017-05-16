@@ -1,0 +1,32 @@
+.video {
+  text-align: center;
+  padding: 20px 10px 0;
+  max-width: 800px;
+  margin: 0 auto;
+
+  iframe {
+    border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.videoContainer {
+  margin: 0 auto;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import css from './style.scss'
+import ToggleButton from '../ToggleButton'
 
 class MailingList extends Component {
   constructor (props) {
@@ -48,13 +49,11 @@ class MailingList extends Component {
               </button>
             </form>
           ) : (
-            <button
-              type='button'
-              className={css.mailingListButton}
+            <ToggleButton
               onClick={this.openMailingListForm}
             >
-              Mailing List
-            </button>
+              Join Mailing List
+            </ToggleButton>
           )
         }
       </div>

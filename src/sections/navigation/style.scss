@@ -27,3 +27,25 @@
   bottom: 8px;
   left: 14px;
 }
+
+.toggleButton {
+  background: none;
+  border: none;
+  outline: none;
+
+  font-family: 'Fira Sans';
+  font-size: 21px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+
+  cursor: pointer;
+  text-transform: uppercase;
+
+  transition: opacity 200ms;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}

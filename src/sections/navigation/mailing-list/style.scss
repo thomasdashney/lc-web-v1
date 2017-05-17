@@ -1,0 +1,72 @@
+.mailingList {
+  margin-bottom: 10px;
+}
+
+.mailingListButton {
+  background: none;
+  border: none;
+  outline: none;
+
+  font-family: 'Fira Sans';
+  font-size: 21px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+
+  cursor: pointer;
+  text-transform: uppercase;
+
+  transition: opacity 200ms;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.emailInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  outline: none;
+  color: white;
+  font-size: 16px;
+  width: 124px;
+  font-weight: 300;
+  font-family: "Fira Sans";
+  margin-right: 5px;
+  padding: 5px;
+
+  transition: border-bottom 200ms;
+  &:hover, &:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 200ms;
+  }
+}
+
+.submitButton {
+  font-family: 'Fira Sans';
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  outline: none;
+  border-radius: 2px;
+  opacity: 1;
+  height: 29px;
+  cursor: pointer;
+
+  transition: border 200ms;
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+}

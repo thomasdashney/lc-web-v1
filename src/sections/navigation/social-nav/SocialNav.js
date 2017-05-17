@@ -5,6 +5,7 @@ import css from './style.scss'
 import facebookImageUrl from './icons/facebook.png'
 import instagramImageUrl from './icons/instagram.png'
 import twitterImageUrl from './icons/twitter.png'
+import youtubeImageUrl from './icons/youtube.png'
 import soundcloudImageUrl from './icons/soundcloud.png'
 import bandsintownImageUrl from './icons/bandsintown.png'
 
@@ -23,6 +24,11 @@ const socialLinks = [
     src: twitterImageUrl,
     alt: 'Twitter',
     to: 'http://www.twitter.com/lostcousinsband'
+  },
+  {
+    src: youtubeImageUrl,
+    alt: 'Youtube',
+    to: 'http://www.youtube.com/user/lostcousinsband'
   },
   {
     src: soundcloudImageUrl,

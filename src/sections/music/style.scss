@@ -4,12 +4,21 @@ $boxShadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
   padding-top: 3px;
 }
 
-.title {
-  font-size: 18px;
+.title, .date {
   font-family: 'Fira Sans';
   text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
   text-align: center;
   font-weight: 400;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 16px;
+  margin-top: 0;
 }
 
 .cover {

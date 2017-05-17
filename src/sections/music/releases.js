@@ -2,8 +2,8 @@ import notNowWhatWeWere from './album-covers/not-now-what-we-were.jpg'
 
 export default [
   {
-    title: 'Not Now What We Were EP',
-    year: '2015',
+    title: 'Not Now What We Were - EP',
+    date: 'April 2015',
     imageSrc: notNowWhatWeWere,
     links: [
       {

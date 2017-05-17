@@ -8,7 +8,7 @@ import MusicButton from './MusicButton'
 const Music = () => (
   <div>
     {releases.map((release, index) => {
-      const { title, year, imageSrc, links } = release
+      const { title, date, imageSrc, links } = release
 
       const coverJsx = (
         <div className={css.cover}>
@@ -26,9 +26,12 @@ const Music = () => (
 
       return (
         <div className={css.release} key={index}>
-          <h4 className={css.title}>
-            {title}, {year}
-          </h4>
+          <h2 className={css.title}>
+            {title}
+          </h2>
+          <h3 className={css.date}>
+            {date}
+          </h3>
           <MediaQuery maxWidth='1260px'>
             {coverJsx}
             {linksJsx}

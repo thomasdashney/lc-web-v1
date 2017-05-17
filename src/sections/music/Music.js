@@ -12,7 +12,23 @@ const Music = () => (
 
       const coverJsx = (
         <div className={css.cover}>
-          <img src={imageSrc} alt={title} />
+          <div className={css.coverContainer}>
+            <img src={imageSrc} alt={title} />
+            <div className={css.credits}>
+              <p>
+                Written and Performed by Lost Cousins
+              </p>
+              <p>
+                Produced, Engineered & Mixed by Darryl Neudorf
+              </p>
+              <p>
+                Mastered by Peter J. Moore
+              </p>
+              <p>
+                Artwork by Mady Newey
+              </p>
+            </div>
+          </div>
         </div>
       )
 

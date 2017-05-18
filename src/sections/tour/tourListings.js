@@ -1,4 +1,6 @@
-export default [
+import moment from 'moment'
+
+const listings = [
   {
     date: '2017-05-16',
     venue: 'Capital Complex',
@@ -51,3 +53,7 @@ export default [
     ticketLink: 'http://www.ticketfly.com/event/1260425-hillside-festival-july-guelph/'
   }
 ]
+
+export default listings.filter(listing => {
+  return moment(listing.date).startOf('day').isSameOrAfter(moment().startOf('day'))
+})

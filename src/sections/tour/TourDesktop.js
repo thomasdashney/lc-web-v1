@@ -15,7 +15,8 @@ export default ({ tourListings }) => (
           acts,
           location,
           ticketLink,
-          facebookLink
+          facebookLink,
+          infoLink
         } = listing
         const dateMoment = moment(date)
 
@@ -45,6 +46,11 @@ export default ({ tourListings }) => (
               {ticketLink && (
                 <ListingLink to={ticketLink}>
                   Tickets
+                </ListingLink>
+              )}
+              {infoLink && (
+                <ListingLink to={infoLink}>
+                  Info
                 </ListingLink>
               )}
             </td>

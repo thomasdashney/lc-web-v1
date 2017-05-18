@@ -32,6 +32,12 @@ const listings = [
     ticketLink: 'https://www.eventbrite.ca/e/lost-cousins-the-kents-tickets-34196125532'
   },
   {
+    date: '2017-06-23',
+    venue: 'Skeleton Park Arts Festival',
+    location: 'Kingston, ON',
+    infoLink: 'http://skeletonparkartsfest.ca'
+  },
+  {
     date: '2017-06-25',
     venue: 'NXNE Port Lands 2017',
     location: 'Toronto, ON',

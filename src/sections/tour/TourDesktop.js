@@ -14,9 +14,9 @@ export default ({ tourListings }) => (
           venue,
           acts,
           location,
-          ticketLink,
-          facebookLink,
-          infoLink
+          ticket_link: ticketLink,
+          facebook_link: facebookLink,
+          info_link: infoLink
         } = listing
         const dateMoment = moment(date)
 

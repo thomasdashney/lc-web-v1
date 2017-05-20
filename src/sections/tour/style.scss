@@ -90,3 +90,32 @@
     margin-bottom: 2px;
   }
 }
+
+.noListings {
+  position: relative;
+  text-align: center;
+  font-family: 'Fira Sans';
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.loadingSpinner {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: block;
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+
+  stop {
+    stop-color: black;
+  }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

@@ -5,6 +5,8 @@ import {
   Route
 } from 'react-router-dom'
 
+import { database } from 'firebase'
+
 import { Admin } from './admin'
 import { Navigation } from './sections/navigation'
 import { Home } from './sections/home'
@@ -19,11 +21,26 @@ class App extends Component {
     super(props)
 
     this.state = {
-      navIsOpen: false
+      navIsOpen: false,
+      tourListings: null
     }
+
+    this.listingsRef = database.ref('tour_listings')
 
     this.toggleNavigation = this.toggleNavigation.bind(this)
     this.closeNavigation = this.closeNavigation.bind(this)
+  }
+
+  receivedTourListings (snapshot) {
+    this.setState({ tourListings: snapshot.val() })
+  }
+
+  componentDidMount () {
+    this.listingsRef.on('value', this.receivedTourListings.bind(this))
+  }
+
+  componentWillUnmount () {
+    this.listingsRef.off()
   }
 
   toggleNavigation () {
@@ -58,7 +75,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/music' component={Music} />
                 <Route exact path='/video' component={Video} />
-                <Route exact path='/tour' component={Tour} />
+                <Route exact path='/tour' render={() => <Tour tourListings={this.state.tourListings} />} />
               </div>
             </div>
           )} />

@@ -7,19 +7,15 @@ const Video = () => (
     <div className={css.videoContainer}>
       <iframe
         src='//www.youtube.com/embed/smiBXf5sfj4'
-        frameborder='0'
-        webkitallowfullscreen
-        mozallowfullscreen
-        allowfullscreen
+        frameBorder='0'
+        allowFullScreen
       />
     </div>
     <div className={css.videoContainer}>
       <iframe
         src='//player.vimeo.com/video/135092427'
-        frameborder='0'
-        webkitallowfullscreen
-        mozallowfullscreen
-        allowfullscreen
+        frameBorder='0'
+        allowFullScreen
       />
     </div>
   </div>

@@ -31,7 +31,6 @@
   z-index: 5;
 
   @include breakpoint (laptop-up) {
-    position: relative;
     width: 300px;
     height: auto;
     background-color: transparent;

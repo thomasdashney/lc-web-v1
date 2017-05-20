@@ -8,6 +8,7 @@ import {
 import { database } from 'firebase'
 
 import { Admin } from './admin'
+import { Banner } from './sections/banner'
 import { Navigation } from './sections/navigation'
 import { Home } from './sections/home'
 import { Music } from './sections/music'
@@ -66,8 +67,10 @@ class App extends Component {
           <Route path='/admin' component={Admin} />
           <Route render={() => (
             <div className={classNames}>
-              <Navigation
+              <Banner
                 onNavigationToggle={this.toggleNavigation}
+              />
+              <Navigation
                 onNavLinkClick={this.closeNavigation}
               />
               <div className={css.background} />

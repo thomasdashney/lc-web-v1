@@ -1,11 +1,6 @@
 @import '_variables';
 
 @mixin breakpoint($point) {
-  /*
-   * This breakpoint should be used sparingly -- brought in solely
-   * to assist retrofitting our <Grid /> with mobile styles. All other
-   * styles should be declared mobile-first.
-   */
   @if $point == mobile-only {
     @media (max-width: $mobileMax) { @content ; }
   }

@@ -18,10 +18,12 @@
   padding: 5px;
 
   transition: border-bottom 200ms;
-  &:hover, &:focus {
-    border-bottom: 1px solid rgba(255, 255, 255, 1);
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+  &:not(:disabled) {
+    &:hover, &:focus {
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
     }
   }
 
@@ -42,11 +44,11 @@
   border-radius: 2px;
   opacity: 1;
   height: 29px;
-  cursor: pointer;
 
   transition: border 200ms;
-  &:hover {
+  &:hover:not(:disabled) {
     border: 1px solid rgba(255, 255, 255, 1);
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
   }
 }

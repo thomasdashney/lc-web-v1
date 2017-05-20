@@ -33,9 +33,6 @@ class MailingList extends Component {
     database.ref().child('mailing_list_emails').push(this.state.email)
       .then(() => {
         this.setState({ submitting: false, submitted: true })
-        setTimeout(() => {
-          this.setState({ email: '', submitted: false, open: false })
-        }, 1500)
       })
       .catch(() => this.setState({ email: '', submitting: false, open: false }))
   }
@@ -51,14 +48,14 @@ class MailingList extends Component {
                 onChange={this.handleEmailChange}
                 value={this.state.email}
                 placeholder='your@email.com'
-                disabled={this.state.submitted}
+                disabled={this.state.submitting || this.state.submitted}
               />
               <button
                 type='submit'
                 className={css.submitButton}
-                disabled={this.state.submitted}
+                disabled={this.state.submitting || this.state.submitted}
               >
-                {this.state.submitted ? 'See You Soon!' : 'Join Mailing List'}
+                {this.state.submitted ? 'Join Succesful' : 'Join Mailing List'}
               </button>
             </form>
           ) : (

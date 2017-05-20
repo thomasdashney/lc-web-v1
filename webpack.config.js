@@ -3,19 +3,41 @@ const fs = require('fs')
 const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const environment = process.env.NODE_ENV || 'development'
 
 // https://github.com/lorenwest/node-config/wiki/Webpack-Usage
 const configPath = resolve(__dirname, 'config.json')
 fs.writeFileSync(configPath, JSON.stringify(config))
 
-module.exports = {
+const appStyleRules = {
+  test: /\.scss$/,
+  include: resolve(__dirname, 'src'),
+  use: [
+    {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        modules: true,
+        localIdentName: '[path][name]__[local]_[hash:base64:5]'
+      }
+    },
+    'sass-loader'
+  ]
+}
+
+const vendorStyleRules = {
+  test: /\.css$/,
+  include: resolve(__dirname, 'node_modules'),
+  use: ['css-loader']
+}
+
+const webpackConfig = {
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
     './index.js'
   ],
   output: {
-    filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -27,11 +49,6 @@ module.exports = {
   },
   context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/',
-    historyApiFallback: true
-  },
   module: {
     rules: [
       {
@@ -43,34 +60,77 @@ module.exports = {
         test: /\.(png|jpg)$/,
         loader: 'file-loader'
       },
-      {
-        test: /\.scss$/,
-        include: resolve(__dirname, 'src'),
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: '[path][name]__[local]_[hash:base64:5]'
-            }
-          },
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.css$/,
-        include: resolve(__dirname, 'node_modules'),
-        loader: ['style-loader', 'css-loader']
-      }
+      appStyleRules,
+      vendorStyleRules
     ]
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './src/index.html'),
       favicon: resolve(__dirname, './src/favicon.ico')
     })
   ]
 }
+
+if (environment === 'development') {
+  webpackConfig.output.filename = 'bundle.js'
+  webpackConfig.devtool = 'eval'
+  webpackConfig.devServer = {
+    contentBase: resolve(__dirname, 'dist'),
+    publicPath: '/',
+    historyApiFallback: true
+  }
+  webpackConfig.entry.unshift(
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8081'
+  )
+  webpackConfig.plugins.push(new webpack.NamedModulesPlugin())
+
+  // use style-loader in development for hot module reloading
+  ;[appStyleRules, vendorStyleRules].forEach(rules => {
+    rules.use.unshift('style-loader')
+  })
+} else {
+  webpackConfig.output.filename = '[name].[chunkhash].js'
+  webpackConfig.output.sourceMapFilename = '[name].[chunkhash].map'
+  webpackConfig.devtool = 'source-map'
+
+  // extract css to files
+  const extractAppCss = new ExtractTextPlugin('app.css')
+  const extractVendorCss = new ExtractTextPlugin('vendor.css')
+  appStyleRules.use = extractAppCss.extract({
+    use: appStyleRules.use,
+    fallback: 'style-loader'
+  })
+  vendorStyleRules.use = extractVendorCss.extract({
+    use: vendorStyleRules.use,
+    fallback: 'style-loader'
+  })
+  webpackConfig.plugins.push(extractAppCss, extractVendorCss)
+
+  // extract vendor modules to common bundle
+  webpackConfig.plugins.push(
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+        return module.context && module.context.indexOf('node_modules') !== -1
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
+    })
+  )
+
+  // minify bundles
+  webpackConfig.plugins.push(
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true
+    })
+  )
+}
+
+module.exports = webpackConfig

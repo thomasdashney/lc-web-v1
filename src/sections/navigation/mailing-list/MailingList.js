@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import { database } from 'firebase'
 import css from './style.scss'
 import ToggleButton from '../ToggleButton'
 
@@ -27,6 +28,16 @@ class MailingList extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
+
+    this.setState({ submitting: true })
+    database.ref().child('mailing_list_emails').push(this.state.email)
+      .then(() => {
+        this.setState({ submitting: false, submitted: true })
+        setTimeout(() => {
+          this.setState({ email: '', submitted: false, open: false })
+        }, 1500)
+      })
+      .catch(() => this.setState({ email: '', submitting: false, open: false }))
   }
 
   render () {
@@ -40,12 +51,14 @@ class MailingList extends Component {
                 onChange={this.handleEmailChange}
                 value={this.state.email}
                 placeholder='your@email.com'
+                disabled={this.state.submitted}
               />
               <button
                 type='submit'
                 className={css.submitButton}
+                disabled={this.state.submitted}
               >
-                Join Mailing List
+                {this.state.submitted ? 'See You Soon!' : 'Join Mailing List'}
               </button>
             </form>
           ) : (

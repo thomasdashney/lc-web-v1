@@ -58,9 +58,16 @@ class App extends Component {
   }
 
   updateDocumentState (navIsOpen) {
-    document.documentElement.className = navIsOpen ? 'navIsOpen' : ''
-    document.body.className = navIsOpen ? 'navIsOpen' : ''
-    navIsOpen ? disableScroll() : enableScroll()
+    let newClassName
+    if (navIsOpen) {
+      newClassName = 'navIsOpen'
+      window.scrollTo(0, 0)
+      disableScroll()
+    } else {
+      newClassName = ''
+      enableScroll()
+    }
+    document.body.className = newClassName
   }
 
   render () {

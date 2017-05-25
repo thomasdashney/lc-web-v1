@@ -7,7 +7,6 @@
     font-family: "Fira Sans";
     font-weight: 500;
     text-transform: uppercase;
-    color: rgb(231, 231, 231);
     font-size: 28px;
 
     @include breakpoint (laptop-up) {
@@ -45,8 +44,10 @@
   outline: none;
 
   position: absolute;
-  top: 23px;
-  left: 10px;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 75px;
 
   @include breakpoint (laptop-up) {
     display: none;
@@ -55,4 +56,5 @@
 
 .logo {
   text-decoration: none;
+  color: rgb(231, 231, 231);
 }

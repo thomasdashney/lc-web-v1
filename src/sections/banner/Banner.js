@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import css from './style.scss'
 import drawerIconUrl from './drawer.png'
 
-const Banner = ({ onNavigationToggle }) => (
+const Banner = ({ onNavigationToggle, onLogoClick }) => (
   <div className={css.banner}>
     <button
       type='button'
@@ -13,11 +13,11 @@ const Banner = ({ onNavigationToggle }) => (
     >
       <img src={drawerIconUrl} alt='Open Navigation' />
     </button>
-    <Link to='/' className={css.logo}>
-      <h1>
+    <h1>
+      <Link to='/' className={css.logo} onClick={onLogoClick}>
         Lost Cousins
-      </h1>
-    </Link>
+      </Link>
+    </h1>
   </div>
 )
 

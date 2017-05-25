@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import { database } from 'firebase'
+import { enableScroll, disableScroll } from 'scroll-manager'
 
 import { Admin } from './admin'
 import { Banner } from './sections/banner'
@@ -45,30 +46,33 @@ class App extends Component {
   }
 
   toggleNavigation () {
-    this.setState({
-      navIsOpen: !this.state.navIsOpen
-    })
+    const navIsOpen = !this.state.navIsOpen
+    this.setState({ navIsOpen })
+    this.updateDocumentState(navIsOpen)
   }
 
   closeNavigation () {
-    this.setState({ navIsOpen: false })
+    const navIsOpen = false
+    this.setState({ navIsOpen })
+    this.updateDocumentState(navIsOpen)
+  }
+
+  updateDocumentState (navIsOpen) {
+    document.documentElement.className = navIsOpen ? 'navIsOpen' : ''
+    document.body.className = navIsOpen ? 'navIsOpen' : ''
+    navIsOpen ? disableScroll() : enableScroll()
   }
 
   render () {
-    const { navIsOpen } = this.state
-    const classNames = [
-      css.siteContainer,
-      navIsOpen ? 'navIsOpen' : ''
-    ].join(' ')
-
     return (
       <Router>
         <Switch>
           <Route path='/admin' component={Admin} />
           <Route render={() => (
-            <div className={classNames}>
+            <div className={css.siteContainer}>
               <Banner
                 onNavigationToggle={this.toggleNavigation}
+                onLogoClick={this.closeNavigation}
               />
               <Navigation
                 onNavLinkClick={this.closeNavigation}

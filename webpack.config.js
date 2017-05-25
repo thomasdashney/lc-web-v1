@@ -96,8 +96,8 @@ if (environment === 'development') {
   webpackConfig.devtool = 'source-map'
 
   // extract css to files
-  const extractAppCss = new ExtractTextPlugin('app.css')
-  const extractVendorCss = new ExtractTextPlugin('vendor.css')
+  const extractAppCss = new ExtractTextPlugin('app.[chunkhash].css')
+  const extractVendorCss = new ExtractTextPlugin('vendor.[chunkhash].css')
   appStyleRules.use = extractAppCss.extract({
     use: appStyleRules.use,
     fallback: 'style-loader'

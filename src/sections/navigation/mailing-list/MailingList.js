@@ -44,6 +44,7 @@ class MailingList extends Component {
           ? (
             <form onSubmit={this.handleSubmit}>
               <input
+                type='text'
                 className={css.emailInput}
                 onChange={this.handleEmailChange}
                 value={this.state.email}

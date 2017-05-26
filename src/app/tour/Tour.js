@@ -7,6 +7,8 @@ import TourDesktop from './TourDesktop'
 import TourMobile from './TourMobile'
 import LoadingSpinner from './LoadingSpinner'
 
+import { mobileMax, laptopMin } from 'shared/styles/variables'
+
 const Tour = ({ tourListings }) => {
   if (!tourListings) {
     return <LoadingSpinner />
@@ -38,10 +40,10 @@ const Tour = ({ tourListings }) => {
       <MediaQuery maxWidth='619px'>
         <TourMobile tourListings={tourListings} />
       </MediaQuery>
-      <MediaQuery minWidth='620px' maxWidth='799px'>
+      <MediaQuery minWidth='620px' maxWidth={mobileMax}>
         <TourDesktop tourListings={tourListings} />
       </MediaQuery>
-      <MediaQuery minWidth='800px' maxWidth='944px'>
+      <MediaQuery minWidth={laptopMin} maxWidth='944px'>
         <TourMobile tourListings={tourListings} />
       </MediaQuery>
       <MediaQuery minWidth='945px'>

@@ -5,16 +5,16 @@ import {
   Route
 } from 'react-router-dom'
 
-import { database } from 'firebase'
-import { enableScroll, disableScroll } from 'scroll-manager'
+import { database } from 'services/firebase'
+import { enableScroll, disableScroll } from 'services/scroll-manager'
 
 import { Admin } from './admin'
-import { Banner } from './sections/banner'
-import { Navigation } from './sections/navigation'
-import { Home } from './sections/home'
-import { Music } from './sections/music'
-import { Video } from './sections/video'
-import { Tour } from './sections/tour'
+import { Banner } from './banner'
+import { Navigation } from './navigation'
+import { Home } from './home'
+import { Music } from './music'
+import { Video } from './video'
+import { Tour } from './tour'
 
 import css from './style.scss'
 

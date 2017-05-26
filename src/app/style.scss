@@ -1,5 +1,5 @@
-@import '~styles/_breakpoints';
-@import '~styles/_variables';
+@import '~shared/styles/_breakpoints';
+@import '~shared/styles/_variables';
 
 $leftMargin: $navigationWidth - 1;
 $topMargin: 20px;
@@ -30,7 +30,7 @@ html, body {
 
 .background {
   @include positioning;
-  background-image: url('./images/main_bg.jpg');
+  background-image: url('./main_bg.jpg');
   background-size: 100% 1865px;
   position: fixed;
   z-index: -1;

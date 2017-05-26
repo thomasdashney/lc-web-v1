@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { database } from 'firebase'
+import { database } from 'services/firebase'
 import css from './style.scss'
 import ToggleButton from '../ToggleButton'
 

@@ -44,9 +44,12 @@ const webpackConfig = {
   },
   resolve: {
     alias: {
-      config: configPath
+      config: configPath,
+      app: resolve(__dirname, 'src/app'),
+      services: resolve(__dirname, 'src/services'),
+      shared: resolve(__dirname, 'src/shared')
     },
-    modules: ['src/modules', 'node_modules']
+    modules: ['node_modules']
   },
   context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',

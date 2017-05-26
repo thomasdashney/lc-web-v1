@@ -1,4 +1,6 @@
 // from https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
+// hacky solution copied from stackoverflow..
+// in search of a better way to disable scrolling without js
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36

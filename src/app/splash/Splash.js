@@ -8,21 +8,19 @@ const ESCAPE_KEY_CODE = 27
 class Splash extends Component {
   constructor (props) {
     super(props)
-    this.state = { dismissed: false }
+    this.state = { dismissed: !this.isSplashLocation() }
     this.handleEscapeKeyPress = this.handleEscapeKeyPress.bind(this)
     this.dismiss = this.dismiss.bind(this)
   }
 
   componentDidMount () {
-    if (!this.isSplashLocation()) {
-      this.dismiss()
-    } else {
+    if (this.isSplashLocation()) {
       document.addEventListener('keyup', this.handleEscapeKeyPress, false)
     }
   }
 
   componentWillUnmount () {
-    this.dismiss()
+    document.removeEventListener('keyup', this.handleEscapeKeyPress)
   }
 
   componentWillReceiveProps () {

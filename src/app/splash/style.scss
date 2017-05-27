@@ -1,0 +1,106 @@
+$zIndex: 100;
+
+.splashWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  content: '';
+  z-index: $zIndex;
+  transition: all ease-in-out 800ms;
+  opacity: 1;
+}
+
+.splashVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: $zIndex + 1;
+  overflow: hidden;
+}
+
+.dismissed {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: black;
+  opacity: 0.7;
+  z-index: $zIndex + 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  width:100%;
+  max-width: 95%;
+  padding: 0 10px;
+  z-index: $zIndex + 2;
+}
+
+.headings {
+  font-family: 'Fira Sans';
+  color: white;
+  opacity: 0.8;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  h1 {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  h2 {
+    font-weight: 300;
+    margin: 0;
+  }
+}
+
+.spotifyPlayer {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  width: 300px;
+  height: 80px;
+  margin: 0 auto 30px;
+}
+
+.enterSiteButton {
+  margin: 0;
+  color: white;
+  background-color: transparent;
+  font-family: 'Fira Sans';
+  font-size: 19px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid white;
+  border-radius: 3px;
+  height: 36px;
+  width: 110px;
+  opacity: 0.7;
+  outline: none;
+  transition: all 200ms;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

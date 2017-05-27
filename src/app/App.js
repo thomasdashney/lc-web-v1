@@ -8,6 +8,7 @@ import {
 import { database } from 'services/firebase'
 import { enableScroll, disableScroll } from 'services/scroll-manager'
 
+import { Splash } from './splash'
 import { Admin } from './admin'
 import { Banner } from './banner'
 import { Navigation } from './navigation'
@@ -76,20 +77,23 @@ class App extends Component {
         <Switch>
           <Route path='/admin' component={Admin} />
           <Route render={() => (
-            <div className={css.siteContainer}>
-              <Banner
-                onNavigationToggle={this.toggleNavigation}
-                onLogoClick={this.closeNavigation}
-              />
-              <Navigation
-                onNavLinkClick={this.closeNavigation}
-              />
-              <div className={css.background} />
-              <div className={css.main}>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/music' component={Music} />
-                <Route exact path='/video' component={Video} />
-                <Route exact path='/tour' render={(props) => <Tour {...props} tourListings={this.state.tourListings} />} />
+            <div>
+              <Route path='/' component={Splash} />
+              <div className={css.siteContainer}>
+                <Banner
+                  onNavigationToggle={this.toggleNavigation}
+                  onLogoClick={this.closeNavigation}
+                />
+                <Navigation
+                  onNavLinkClick={this.closeNavigation}
+                />
+                <div className={css.background} />
+                <div className={css.main}>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/music' component={Music} />
+                  <Route exact path='/video' component={Video} />
+                  <Route exact path='/tour' render={(props) => <Tour {...props} tourListings={this.state.tourListings} />} />
+                </div>
               </div>
             </div>
           )} />

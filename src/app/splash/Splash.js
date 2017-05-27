@@ -73,7 +73,12 @@ class Splash extends Component {
               Enter Site
             </button>
           </div>
-          <video className={css.splashVideo} autoPlay loop>
+          <video
+            className={css.splashVideo}
+            autoPlay
+            loop
+            muted
+          >
             <source src={splashVideoUrl} type='video/mp4' />
           </video>
         </div>

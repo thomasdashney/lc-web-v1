@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "deploy-production": "rm -rf ./dist && NODE_ENV=production webpack && aws s3 sync dist/ s3://lost-cousins",
+    "deploy-production": "rm -rf ./dist && NODE_ENV=production webpack",
     "test": "npm run lint",
     "lint": "standard"
   },

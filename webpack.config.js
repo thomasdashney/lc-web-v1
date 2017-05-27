@@ -85,11 +85,12 @@ if (environment === 'development') {
   webpackConfig.devServer = {
     contentBase: resolve(__dirname, 'dist'),
     publicPath: '/',
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 8080
   }
   webpackConfig.entry.unshift(
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8081'
+    'webpack-dev-server/client?http://localhost:8080'
   )
   webpackConfig.plugins.push(new webpack.NamedModulesPlugin())
 

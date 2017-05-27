@@ -5,5 +5,6 @@
     "databaseURL": "https://lost-cousins.firebaseio.com",
     "storageBucket": "lost-cousins.appspot.com",
     "messagingSenderId": "227992144548"
-  }
+  },
+  "gaTrackingId": "UA-99975220-1"
 }

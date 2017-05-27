@@ -1,6 +1,8 @@
 import { gaTrackingId } from 'config'
 import ReactGA from 'react-ga'
 
-ReactGA.initialize(gaTrackingId)
+if (gaTrackingId) {
+  ReactGA.initialize(gaTrackingId)
+}
 
 export default ReactGA

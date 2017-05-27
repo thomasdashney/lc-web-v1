@@ -9,35 +9,45 @@ class Splash extends Component {
   constructor (props) {
     super(props)
     this.state = { dismissed: false }
+    this.handleEscapeKeyPress = this.handleEscapeKeyPress.bind(this)
     this.dismiss = this.dismiss.bind(this)
   }
 
   componentDidMount () {
-    document.addEventListener('keyup', e => {
-      if (e.keyCode === ESCAPE_KEY_CODE) {
-        this.setState({ dismissed: true })
-      }
-    }, false)
+    if (!this.isSplashLocation()) {
+      this.dismiss()
+    } else {
+      document.addEventListener('keyup', this.handleEscapeKeyPress, false)
+    }
+  }
 
-    // auto-dismiss if the first route is not splash page
-    if (!this.props.match.isExact) {
+  componentWillUnmount () {
+    this.dismiss()
+  }
+
+  componentWillReceiveProps () {
+    if (!this.isSplashLocation()) {
       this.dismiss()
     }
   }
 
-  componentWillReceiveProps () {
-    // auto-dismiss if the first route is not splash page
-    if (!this.props.match.isExact) {
+  isSplashLocation () {
+    return this.props.match.isExact
+  }
+
+  handleEscapeKeyPress (e) {
+    if (e.keyCode === ESCAPE_KEY_CODE) {
       this.dismiss()
     }
   }
 
   dismiss () {
+    document.removeEventListener('keyup', this.handleEscapeKeyPress)
     this.setState({ dismissed: true })
   }
 
   render () {
-    if (!this.props.match.isExact) {
+    if (!this.isSplashLocation()) {
       return null
     }
 

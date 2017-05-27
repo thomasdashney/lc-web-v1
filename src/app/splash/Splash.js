@@ -18,6 +18,18 @@ class Splash extends Component {
         this.setState({ dismissed: true })
       }
     }, false)
+
+    // auto-dismiss if the first route is not splash page
+    if (!this.props.match.isExact) {
+      this.dismiss()
+    }
+  }
+
+  componentWillReceiveProps () {
+    // auto-dismiss if the first route is not splash page
+    if (!this.props.match.isExact) {
+      this.dismiss()
+    }
   }
 
   dismiss () {

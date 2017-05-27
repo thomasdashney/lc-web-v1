@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+
+import { trackExternalLink } from 'services/analytics'
 import css from './style.scss'
 
 const links = [
@@ -32,7 +34,7 @@ const NavigationLinks = ({ onNavLinkClick }) => (
       return (
         <li key={index}>
           {external
-            ? <a href={to} target='_blank'>{name}</a>
+            ? <a href={to} target='_blank' onClick={trackExternalLink('Merch')}>{name}</a>
             : (
               <NavLink
                 exact

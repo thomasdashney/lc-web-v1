@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { trackExternalLink } from 'services/analytics'
 import css from './style.scss'
 
 import facebookImageUrl from './icons/facebook.png'
@@ -46,7 +47,7 @@ const SocialNav = () => (
   <ul className={css.socialLinks}>
     {socialLinks.map(({ to, src, alt }, index) => (
       <li key={index}>
-        <a href={to} target='_blank'>
+        <a href={to} target='_blank' onClick={trackExternalLink(alt)}>
           <img src={src} alt={alt} />
         </a>
       </li>

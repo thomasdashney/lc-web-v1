@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
+import { trackPageView } from 'services/analytics'
 import css from './style.scss'
 import gardenPhotoUrl from './lc_garden.jpg'
 
+@trackPageView()
 class Home extends Component {
   componentWillMount () {
     if (this.props.location.hash === '#tour') {

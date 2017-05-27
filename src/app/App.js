@@ -89,7 +89,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/music' component={Music} />
                 <Route exact path='/video' component={Video} />
-                <Route exact path='/tour' render={() => <Tour tourListings={this.state.tourListings} />} />
+                <Route exact path='/tour' render={(props) => <Tour {...props} tourListings={this.state.tourListings} />} />
               </div>
             </div>
           )} />

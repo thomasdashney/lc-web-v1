@@ -76,7 +76,6 @@ class Splash extends Component {
             autoPlay
             loop
             muted
-            defaultMuted
             playsInline
           >
             <source src={splashVideoUrl} type='video/mp4' />

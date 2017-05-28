@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './style.scss'
+import css from './style.css'
 import NavigationLinks from './navigation-links/NavigationLinks'
 import Contact from './contact/Contact'
 import MailingList from './mailing-list/MailingList'

@@ -4,7 +4,7 @@
   max-width: 640px;
   margin: 0 auto 30px;
 
-  iframe {
+  & iframe {
     border: none;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   }
@@ -24,7 +24,7 @@
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  iframe, object, embed {
+  & iframe, & object, & embed {
     position: absolute;
     top: 0;
     left: 0;

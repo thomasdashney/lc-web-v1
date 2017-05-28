@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './style.scss'
+import css from './style.css'
 
 export default ({ to, children }) => (
   <a

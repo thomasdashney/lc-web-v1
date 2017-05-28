@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import ToggleButton from '../ToggleButton'
-import css from './style.scss'
+import css from './style.css'
 
 const email = 'lostcousinsband@gmail.com'
 

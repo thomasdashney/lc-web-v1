@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { trackExternalLink } from 'services/analytics'
-import css from './style.scss'
+import css from './style.css'
 
 import facebookImageUrl from './icons/facebook.png'
 import instagramImageUrl from './icons/instagram.png'

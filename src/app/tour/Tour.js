@@ -3,12 +3,13 @@ import MediaQuery from 'react-responsive'
 import moment from 'moment'
 
 import { trackPageView } from 'services/analytics'
-import css from './style.scss'
+import css from './style.css'
 import TourDesktop from './TourDesktop'
 import TourMobile from './TourMobile'
 import LoadingSpinner from './LoadingSpinner'
 
-import { mobileMax, laptopMin } from 'shared/styles/variables'
+import cssVariables from 'shared/styles/variables'
+const { mobileMax, laptopMin } = cssVariables
 
 @trackPageView()
 class Tour extends Component {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './style.scss'
+import css from './style.css'
 import * as logos from './logos'
 
 const MusicButton = ({ type, to }) => {

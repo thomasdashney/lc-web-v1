@@ -1,0 +1,16 @@
+.socialLinks {
+  /* ul reset */
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+
+  & li {
+    margin: 0 2px;
+    display: inline-block;
+    opacity: 0.6;
+    transition: 300ms opacity;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { trackExternalLink } from 'services/analytics'
-import css from './style.scss'
+import css from './style.css'
 
 const links = [
   {

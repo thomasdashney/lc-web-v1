@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import css from './style.scss'
+import css from './style.css'
 import drawerIconUrl from './drawer.png'
 
 const Banner = ({ onNavigationToggle, onLogoClick }) => (

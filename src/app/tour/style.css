@@ -10,21 +10,19 @@
   margin: 0 auto;
   border-collapse: collapse;
 
-  td {
+  & td {
     vertical-align: top;
   }
 
-  tr:not(:first-child) td {
+  & tr:not(:first-child) td {
     border-top: 1px solid rgba(151, 151, 151, 0.2);
   }
 
-  .dates {
-    strong {
-      font-weight: 500;
-    }
+  & .dates strong {
+    font-weight: 500;
   }
 
-  .acts {
+  & .acts {
     display: block;
     font-weight: 200;
     opacity: 0.7;
@@ -35,36 +33,38 @@
 .tourListings {
   margin-top: 40px;
 
-  td {
+  & td {
     padding: 20px 5px;
   }
 
-  .listingLink {
+  & .listingLink {
     display: inline-block;
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
+  }
+
+  & .listingLink:not(:first-child) {
+    margin-left: 10px;
   }
 }
 
 .tourListingsMobile {
-  td {
+  & td {
     padding: 13px 5px;
   }
 
-  .dates > *:not(:first-child) {
+  & .dates > *:not(:first-child) {
     margin-left: 16px;
   }
 
-  .venue, .acts {
+  & .venue, & .acts {
     margin-top: 8px;
   }
 
-  .listingLink {
+  & .listingLink {
     display: block;
-    &:not(:first-child) {
-      margin-top: 6px;
-    }
+  }
+
+  & .listingLink:not(:first-child) {
+    margin-top: 6px;
   }
 }
 
@@ -79,15 +79,14 @@
   text-align: center;
   transition: background-color 300ms;
 
+  & img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+  }
+
   &:hover {
     cursor: pointer;
     background-color: rgba(50, 50, 50, 0.05);
-  }
-
-  // fb icon
-  img {
-    vertical-align: middle;
-    margin-bottom: 2px;
   }
 }
 
@@ -107,15 +106,15 @@
   height: 40px;
   position: relative;
   display: block;
-  -webkit-animation:spin 2s linear infinite;
-  -moz-animation:spin 2s linear infinite;
-  animation:spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 
-  stop {
+  & stop {
     stop-color: black;
   }
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}

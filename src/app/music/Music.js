@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 
 import { trackPageView } from 'services/analytics'
-import css from './style.scss'
+import css from './style.css'
 import releases from './releases'
 import MusicButton from './MusicButton'
 

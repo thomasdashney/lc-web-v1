@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { database } from 'services/firebase'
-import css from './style.scss'
+import css from './style.css'
 import ToggleButton from '../ToggleButton'
 
 class MailingList extends Component {

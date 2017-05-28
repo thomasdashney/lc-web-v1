@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './style.scss'
+import css from './style.css'
 
 export default ({ children, onClick }) => (
   <button

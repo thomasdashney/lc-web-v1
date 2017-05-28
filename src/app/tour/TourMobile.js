@@ -3,7 +3,7 @@ import moment from 'moment'
 
 import facebookImageUrl from './facebook.png'
 import ListingLink from './ListingLink'
-import css from './style.scss'
+import css from './style.css'
 
 export default ({ tourListings }) => (
   <table className={css.tourListingsMobile}>

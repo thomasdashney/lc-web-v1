@@ -1,8 +1,9 @@
-@import '~shared/styles/_breakpoints';
-@import '~shared/styles/_variables';
+@import 'shared/styles/breakpoints.css';
 
-$leftMargin: $navigationWidth - 1;
-$topMargin: 20px;
+:root {
+  --top-margin: 20px;
+  --left-margin: calc(var(--navigationWidth) - 1);
+}
 
 html, body {
   margin: 0;
@@ -11,25 +12,27 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-@mixin positioning {
+.background {
+  /* from positioning mixin */
   width: 100vw;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
-  transition: left $navigationTransitionDuration ease-in-out;
+  transition: left var(--navigationTransitionDuration) ease-in-out;
 
-  @include breakpoint (laptop-up) {
-    left: $leftMargin;
+  @media (--laptop-up) {
+    left: var(--left-margin);
     width: auto;
-    > *:not(.background) {
-      margin-top: $topMargin;
+  }
+
+  & > *:not(.background) {
+    @media (--laptop-up) {
+      margin-top: var(--top-margin);
     }
   }
-}
+  /* from positioning mixin */
 
-.background {
-  @include positioning;
   background-image: url('./main_bg.jpg');
   background-size: 100% 1865px;
   position: fixed;
@@ -43,17 +46,36 @@ html, body {
 }
 
 .main {
-  @include positioning;
+  /* from positioning mixin */
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: left var(--navigationTransitionDuration) ease-in-out;
+
+  @media (--laptop-up) {
+    left: calc(var(--navigationWidth) - 1);
+    width: auto;
+  }
+
+  & > *:not(.background) {
+    @media (--laptop-up) {
+      margin-top: var(--top-margin);
+    }
+  }
+  /* from positioning mixin */
+
   position: absolute;
 
-  > * {
-    margin-top: $mobileBannerHeight + 5px;
+  & > * {
+    margin-top: calc(var(--mobileBannerHeight) + 5px);
   }
 }
 
 :global(.navIsOpen) .background,
 :global(.navIsOpen) .main {
-  left: $leftMargin;
+  left: calc(var(--navigationWidth) - 1);
 }
 
 /**

@@ -26,22 +26,21 @@
   margin: 0 auto;
   position: relative;
 
-  .coverContainer {
+  & .coverContainer {
     width: 100%;
     max-width: 336px;
     margin: 0 auto;
-
     &:hover {
-      img {
+      & img {
         opacity: 0.2;
       }
-      .credits {
+      & .credits {
         opacity: 1;
       }
     }
   }
 
-  img {
+  & img {
     width: 100%;
     max-width: 336px;
     opacity: 1;
@@ -49,7 +48,7 @@
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
   }
 
-  .credits {
+  & .credits {
     font-family: 'Fira Sans';
     font-size: 14px;
     font-weight: 400;
@@ -61,7 +60,7 @@
     opacity: 0;
     transition: opacity 200ms;
 
-    p {
+    & p {
       margin: 3px;
     }
   }
@@ -80,19 +79,20 @@
   height: 55px;
   background-color: rgba(0, 0, 0, 0.3);
   transition: background-color 300ms;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
   border-radius: 3px;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   margin: 5px;
 
-  img {
+  & img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 

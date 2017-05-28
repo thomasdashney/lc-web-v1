@@ -1,18 +1,17 @@
-@import '~shared/styles/_breakpoints';
-@import '~shared/styles/_variables';
+@import 'shared/styles/breakpoints.css';
 
 .navigation {
   background-image: url('./navigation_bg.jpg');
   height: 100vh;
   top: 0;
-  left: -$navigationWidth;
-  width: $navigationWidth;
+  left: calc(-var(--navigationWidth));
+  width: var(--navigationWidth);
   display: inline-block;
   position: fixed;
-  transition: left $navigationTransitionDuration ease-in-out;
+  transition: left var(--navigationTransitionDuration) ease-in-out;
   z-index: 1;
 
-  @include breakpoint(laptop-up) {
+  @media (--laptop-up) {
     left: 0;
   }
 }

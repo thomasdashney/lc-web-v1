@@ -17,7 +17,7 @@ import { Music } from './music'
 import { Video } from './video'
 import { Tour } from './tour'
 
-import css from './style.scss'
+import css from './style.css'
 
 class App extends Component {
   constructor (props) {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './style.scss'
+import css from './style.css'
 
 export default () => (
   <div className={css.loadingSpinner} dangerouslySetInnerHTML={{ __html: `

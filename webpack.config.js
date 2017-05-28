@@ -12,8 +12,8 @@ const environment = process.env.NODE_ENV || 'development'
 const configPath = resolve(__dirname, 'config.json')
 fs.writeFileSync(configPath, JSON.stringify(config))
 
-const appStyleRules = {
-  test: /\.scss$/,
+const appCssRules = {
+  test: /\.css$/,
   include: resolve(__dirname, 'src'),
   use: [
     {
@@ -24,11 +24,11 @@ const appStyleRules = {
         localIdentName: '[path][name]__[local]_[hash:base64:5]'
       }
     },
-    'sass-loader'
+    'postcss-loader'
   ]
 }
 
-const vendorStyleRules = {
+const vendorCssRules = {
   test: /\.css$/,
   include: resolve(__dirname, 'node_modules'),
   use: ['css-loader']
@@ -64,8 +64,8 @@ const webpackConfig = {
         test: /\.(png|jpg|mp4)$/,
         loader: 'file-loader'
       },
-      appStyleRules,
-      vendorStyleRules
+      appCssRules,
+      vendorCssRules
     ]
   },
   plugins: [
@@ -95,7 +95,7 @@ if (environment === 'development') {
   webpackConfig.plugins.push(new webpack.NamedModulesPlugin())
 
   // use style-loader in development for hot module reloading
-  ;[appStyleRules, vendorStyleRules].forEach(rules => {
+  ;[appCssRules, vendorCssRules].forEach(rules => {
     rules.use.unshift('style-loader')
   })
 } else {
@@ -106,12 +106,12 @@ if (environment === 'development') {
   // extract css to files
   const extractAppCss = new ExtractTextPlugin('app.[chunkhash].css')
   const extractVendorCss = new ExtractTextPlugin('vendor.[chunkhash].css')
-  appStyleRules.use = extractAppCss.extract({
-    use: appStyleRules.use,
+  appCssRules.use = extractAppCss.extract({
+    use: appCssRules.use,
     fallback: 'style-loader'
   })
-  vendorStyleRules.use = extractVendorCss.extract({
-    use: vendorStyleRules.use,
+  vendorCssRules.use = extractVendorCss.extract({
+    use: vendorCssRules.use,
     fallback: 'style-loader'
   })
   webpackConfig.plugins.push(extractAppCss, extractVendorCss)
@@ -138,7 +138,6 @@ if (environment === 'development') {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     })
-
   )
 
   const { aws: AWSConfig } = config

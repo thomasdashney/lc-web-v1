@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import css from './style.scss'
+import css from './style.css'
 import splashVideoUrl from './videos/splash_loop_720_hq.mp4'
 
 const ESCAPE_KEY_CODE = 27

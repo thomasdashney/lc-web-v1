@@ -1,0 +1,57 @@
+@import 'shared/styles/breakpoints.css';
+
+.announcementBanner {
+  background-color: #90C6C9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 83px;
+  width: 100%;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  font-family: 'Fira Sans';
+  vertical-align: middle;
+  text-decoration: none;
+  line-height: 20px;
+
+  & p {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 25px;
+    color: black;
+    margin-top: 23px;
+  }
+
+  & .streamButton {
+    color: black;
+    background-color: transparent;
+    transition: background-color 300ms;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: 300;
+    display: none; /* on mobile */
+  }
+
+  & .streamButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (--laptop-up) {
+  .announcementBanner {
+    line-height: 83px;
+
+    & p {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    & .streamButton {
+      display: inline;
+    }
+  }
+}

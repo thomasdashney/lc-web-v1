@@ -16,6 +16,8 @@ import { Music } from './music'
 import { Video } from './video'
 import { Tour } from './tour'
 
+import { AnnouncementBanner } from './announcement-banner'
+
 import css from './style.css'
 
 class App extends Component {
@@ -77,6 +79,7 @@ class App extends Component {
           <Route path='/admin' component={Admin} />
           <Route render={() => (
             <div className={css.siteContainer}>
+              <AnnouncementBanner />
               <Banner
                 onNavigationToggle={this.toggleNavigation}
                 onLogoClick={this.closeNavigation}

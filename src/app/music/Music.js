@@ -29,6 +29,14 @@ class Music extends Component {
 
           const linksJsx = (
             <div className={css.links}>
+              <div className={css.playerWrapper}>
+                <iframe
+                  className={css.spotifyPlayer}
+                  src='https://open.spotify.com/embed?uri=spotify:track:2qSxvTaR7lw2BYGcmnYAGz'
+                  frameBorder={0}
+                  allowTransparency
+                />
+              </div>
               {links.map(({ type, url }) => (
                 <MusicButton type={type} to={url} key={type} />
               ))}

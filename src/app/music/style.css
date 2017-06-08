@@ -27,6 +27,7 @@
   position: relative;
 
   & .coverContainer {
+    position: relative;
     width: 100%;
     max-width: 336px;
     margin: 0 auto;
@@ -55,7 +56,7 @@
     text-align: center;
     position: absolute;
     top: 35%;
-    margin-left: 5px;
+    width: 100%;
 
     opacity: 0;
     transition: opacity 200ms;

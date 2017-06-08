@@ -12,25 +12,16 @@ class Music extends Component {
     return (
       <div>
         {releases.map((release, index) => {
-          const { title, date, imageSrc, links } = release
+          const { title, date, imageSrc, links, credits } = release
 
           const coverJsx = (
             <div className={css.cover}>
               <div className={css.coverContainer}>
                 <img src={imageSrc} alt={title} />
                 <div className={css.credits}>
-                  <p>
-                    Written and Performed by Lost Cousins
-                  </p>
-                  <p>
-                    Produced, Engineered & Mixed by Darryl Neudorf
-                  </p>
-                  <p>
-                    Mastered by Peter J. Moore
-                  </p>
-                  <p>
-                    Artwork by Mady Newey
-                  </p>
+                  {credits.map((credit, index) => (
+                    <p key={index}>{credit}</p>
+                  ))}
                 </div>
               </div>
             </div>

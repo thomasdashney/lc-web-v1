@@ -1,10 +1,34 @@
 import notNowWhatWeWere from './album-covers/not-now-what-we-were.jpg'
+import quarters from './album-covers/quarters.jpg'
 
 export default [
+  {
+    title: 'Quarters - Single',
+    date: 'June 2017',
+    imageSrc: quarters,
+    credits: [
+      'Written and Performed by Lost Cousins',
+      'Produced by Nixon Boyd',
+      'Mastered by Noah Mintz',
+      'Artwork by Jati Putra'
+    ],
+    links: [
+      {
+        type: 'soundcloud',
+        url: 'https://soundcloud.com/lostcousinsband/quarters'
+      }
+    ]
+  },
   {
     title: 'Not Now What We Were - EP',
     date: 'April 2015',
     imageSrc: notNowWhatWeWere,
+    credits: [
+      'Written and Performed by Lost Cousins',
+      'Produced, Engineered & Mixed by Darryl Neudorf',
+      'Mastered by Peter J. Moore',
+      'Artwork by Mady Newey',
+    ],
     links: [
       {
         type: 'applemusic',

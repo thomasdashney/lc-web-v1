@@ -31,6 +31,10 @@ export default [
         url: 'https://goo.gl/TExMYT'
       },
       {
+        type: 'bandcamp',
+        url: 'https://lostcousins.bandcamp.com/track/quarters-single'
+      },
+      {
         type: 'soundcloud',
         url: 'https://soundcloud.com/lostcousinsband/quarters'
       }

@@ -15,8 +15,8 @@ html, body {
 .background {
   /* from positioning mixin */
   width: 100vw;
-  height: calc(100% - 83px);
-  top: 83px;
+  height: 100%;
+  top: 0;
   left: 0;
   right: 0;
   transition: left var(--navigationTransitionDuration) ease-in-out;
@@ -48,8 +48,8 @@ html, body {
 .main {
   /* from positioning mixin */
   width: 100vw;
-  height: calc(100% - 85px);
-  top: 85px;
+  height: 100%;
+  top: 0;
   left: 0;
   right: 0;
   transition: left var(--navigationTransitionDuration) ease-in-out;

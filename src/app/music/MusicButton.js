@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { trackExternalLink } from 'analytics'
+import { trackExternalLink } from 'services/analytics'
 import css from './style.css'
 import * as logos from './logos'
 

@@ -20,11 +20,6 @@ const links = [
   {
     name: 'Tour',
     to: '/tour'
-  },
-  {
-    name: 'Merch',
-    to: 'https://www.bandfan.co/collections/lost-cousins-band-merchandise/',
-    external: true
   }
 ]
 

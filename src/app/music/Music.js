@@ -38,7 +38,7 @@ class Music extends Component {
                 />
               </div>
               {links.map(({ type, url }) => (
-                <MusicButton type={type} to={url} key={type} />
+                <MusicButton releaseTitle={title} type={type} to={url} key={type} />
               ))}
             </div>
           )

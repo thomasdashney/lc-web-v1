@@ -59,7 +59,7 @@ class Splash extends Component {
             </div>
             <iframe
               className={css.spotifyPlayer}
-              src='https://open.spotify.com/embed?uri=spotify:track:2qSxvTaR7lw2BYGcmnYAGz'
+              src='https://open.spotify.com/embed?uri=spotify:album:4C3ICoHRTXVd3MLhdssjsl'
               frameBorder={0}
               allowTransparency
             />

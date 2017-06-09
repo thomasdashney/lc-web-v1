@@ -12,7 +12,7 @@ class Music extends Component {
     return (
       <div>
         {releases.map((release, index) => {
-          const { title, date, imageSrc, links, credits } = release
+          const { title, date, imageSrc, links, credits, spotifyURI } = release
 
           const coverJsx = (
             <div className={css.cover}>
@@ -32,7 +32,7 @@ class Music extends Component {
               <div className={css.playerWrapper}>
                 <iframe
                   className={css.spotifyPlayer}
-                  src='https://open.spotify.com/embed?uri=spotify:track:2qSxvTaR7lw2BYGcmnYAGz'
+                  src={`https://open.spotify.com/embed?uri=${spotifyURI}`}
                   frameBorder={0}
                   allowTransparency
                 />

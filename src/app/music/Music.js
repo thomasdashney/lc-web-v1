@@ -12,25 +12,16 @@ class Music extends Component {
     return (
       <div>
         {releases.map((release, index) => {
-          const { title, date, imageSrc, links } = release
+          const { title, date, imageSrc, links, credits } = release
 
           const coverJsx = (
             <div className={css.cover}>
               <div className={css.coverContainer}>
                 <img src={imageSrc} alt={title} />
                 <div className={css.credits}>
-                  <p>
-                    Written and Performed by Lost Cousins
-                  </p>
-                  <p>
-                    Produced, Engineered & Mixed by Darryl Neudorf
-                  </p>
-                  <p>
-                    Mastered by Peter J. Moore
-                  </p>
-                  <p>
-                    Artwork by Mady Newey
-                  </p>
+                  {credits.map((credit, index) => (
+                    <p key={index}>{credit}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -38,6 +29,14 @@ class Music extends Component {
 
           const linksJsx = (
             <div className={css.links}>
+              <div className={css.playerWrapper}>
+                <iframe
+                  className={css.spotifyPlayer}
+                  src='https://open.spotify.com/embed?uri=spotify:track:2qSxvTaR7lw2BYGcmnYAGz'
+                  frameBorder={0}
+                  allowTransparency
+                />
+              </div>
               {links.map(({ type, url }) => (
                 <MusicButton type={type} to={url} key={type} />
               ))}

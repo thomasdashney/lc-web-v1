@@ -4,6 +4,7 @@ import itunesSrc from './itunes.png'
 import googleplaySrc from './googleplay.png'
 import bandcampSrc from './bandcamp.png'
 import soundcloudSrc from './soundcloud.png'
+import deezerSrc from './deezer.png'
 
 export const applemusic = {
   name: 'Apple Music',
@@ -33,4 +34,9 @@ export const bandcamp = {
 export const soundcloud = {
   name: 'Soundcloud',
   src: soundcloudSrc
+}
+
+export const deezer = {
+  name: 'Deezer',
+  src: deezerSrc
 }

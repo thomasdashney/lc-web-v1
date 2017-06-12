@@ -46,7 +46,7 @@ export default [
     imageSrc: notNowWhatWeWere,
     credits: [
       'Written and Performed by Lost Cousins',
-      'Produced, Engineered & Mixed by Darryl Neudorf',
+      'Produced by Darryl Neudorf',
       'Mastered by Peter J. Moore',
       'Artwork by Mady Newey'
     ],

@@ -4,9 +4,9 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
+import { pick } from 'lodash'
 
 import { database } from 'services/firebase'
-import { enableScroll, disableScroll } from 'services/scroll-manager'
 
 import { Splash } from './splash'
 import { Admin } from './admin'
@@ -19,7 +19,40 @@ import { Tour } from './tour'
 
 import css from './style.css'
 
-class App extends Component {
+const App = ({ closeNavigation, toggleNavigation, tourListings }) => {
+  return (
+    <Router>
+      <Switch>
+        <Route path='/admin' component={Admin} />
+        <Route render={() => (
+          <div>
+            <Route path='/' component={Splash} />
+            <div className={css.siteContainer}>
+              <Banner
+                onNavigationToggle={toggleNavigation}
+                onLogoClick={closeNavigation}
+              />
+              <Navigation
+                onNavLinkClick={closeNavigation}
+              />
+              <div className={css.background} />
+              <div className={css.main}>
+                <div className={css.mainWrapper}>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/music' component={Music} />
+                  <Route exact path='/video' component={Video} />
+                  <Route exact path='/tour' render={(props) => <Tour {...props} tourListings={tourListings} />} />
+                </div>
+              </div>
+            </div>
+          </div>
+        )} />
+      </Switch>
+    </Router>
+  )
+}
+
+class AppContainer extends Component {
   constructor (props) {
     super(props)
 
@@ -63,44 +96,23 @@ class App extends Component {
     if (navIsOpen) {
       newClassName = 'navIsOpen'
       window.scrollTo(0, 0)
-      disableScroll()
+      // disableScroll()
     } else {
       newClassName = ''
-      enableScroll()
+      // enableScroll()
     }
     document.body.className = newClassName
   }
 
   render () {
     return (
-      <Router>
-        <Switch>
-          <Route path='/admin' component={Admin} />
-          <Route render={() => (
-            <div>
-              <Route path='/' component={Splash} />
-              <div className={css.siteContainer}>
-                <Banner
-                  onNavigationToggle={this.toggleNavigation}
-                  onLogoClick={this.closeNavigation}
-                />
-                <Navigation
-                  onNavLinkClick={this.closeNavigation}
-                />
-                <div className={css.background} />
-                <div className={css.main}>
-                  <Route exact path='/' component={Home} />
-                  <Route exact path='/music' component={Music} />
-                  <Route exact path='/video' component={Video} />
-                  <Route exact path='/tour' render={(props) => <Tour {...props} tourListings={this.state.tourListings} />} />
-                </div>
-              </div>
-            </div>
-          )} />
-        </Switch>
-      </Router>
+      <App
+        toggleNavigation={this.toggleNavigation}
+        closeNavigation={this.closeNavigation}
+        {...pick(this.state, ['tourListings'])}
+      />
     )
   }
 }
 
-export default App
+export default AppContainer

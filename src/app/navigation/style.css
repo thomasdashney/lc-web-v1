@@ -2,8 +2,9 @@
 
 .navigation {
   background-image: url('./navigation_bg.jpg');
-  height: 100vh;
   top: 0;
+  bottom: 0;
+  max-height: 100vh;
   left: calc(-var(--navigationWidth));
   width: var(--navigationWidth);
   display: inline-block;

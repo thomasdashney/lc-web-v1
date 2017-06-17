@@ -10,6 +10,11 @@ html, body {
   padding: 0;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+
+  &:global(.navIsOpen) {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 .background {
@@ -68,7 +73,7 @@ html, body {
 
   position: absolute;
 
-  & > * {
+  & .mainWrapper {
     margin-top: calc(var(--mobileBannerHeight) + 5px);
   }
 }
@@ -76,6 +81,14 @@ html, body {
 :global(.navIsOpen) .background,
 :global(.navIsOpen) .main {
   left: calc(var(--navigationWidth) - 1);
+  overflow: hidden;
+  transition: all var(--navigationTransitionDuration) ease-in-out;
+  width: calc(100vw - var(--navigationWidth));
+}
+
+:global(.navIsOpen) .main > * {
+  width: 100vw;
+  overflow: hidden;
 }
 
 /**

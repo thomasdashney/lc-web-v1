@@ -13,4 +13,12 @@
       opacity: 1;
     }
   }
+
+  visibility: hidden;
+}
+
+@media (min-height: 280px) {
+  .socialLinks {
+    visibility: visible;
+  }
 }

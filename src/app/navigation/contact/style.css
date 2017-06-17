@@ -2,6 +2,11 @@
   height: 35px;
   width: 100%;
   text-align: center;
+
+  display: none;
+  @media (min-height: 362px) {
+    display: block;
+  }
 }
 
 .email {

@@ -2,6 +2,11 @@
   margin-bottom: 8px;
   height: 35px;
   width: 100%;
+
+  display: none;
+  @media (min-height: 326px) {
+    display: block;
+  }
 }
 
 .emailInput {
@@ -51,3 +56,4 @@
     cursor: pointer;
   }
 }
+

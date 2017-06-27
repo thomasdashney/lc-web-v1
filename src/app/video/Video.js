@@ -10,6 +10,13 @@ class Video extends Component {
       <div className={css.video}>
         <div className={css.videoContainer}>
           <iframe
+            src='//www.youtube.com/embed/uqKBunx5y1w'
+            frameBorder='0'
+            allowFullScreen
+          />
+        </div>
+        <div className={css.videoContainer}>
+          <iframe
             src='//www.youtube.com/embed/smiBXf5sfj4'
             frameBorder='0'
             allowFullScreen

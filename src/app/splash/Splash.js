@@ -2,15 +2,22 @@ import React, { Component } from 'react'
 
 import css from './style.css'
 import splashVideoUrl from './videos/splash_loop_720_hq.mp4'
+import { WatchVideoButton } from './watch-video-button'
 
 const ESCAPE_KEY_CODE = 27
 
 class Splash extends Component {
   constructor (props) {
     super(props)
-    this.state = { dismissed: !this.isSplashLocation() }
+
+    this.state = {
+      dismissed: !this.isSplashLocation(),
+      videoIsPlaying: false
+    }
+
     this.handleEscapeKeyPress = this.handleEscapeKeyPress.bind(this)
     this.dismiss = this.dismiss.bind(this)
+    this.playVideo = this.playVideo.bind(this)
   }
 
   componentDidMount () {
@@ -44,6 +51,10 @@ class Splash extends Component {
     this.setState({ dismissed: true })
   }
 
+  playVideo () {
+    this.setState({ videoIsPlaying: true })
+  }
+
   render () {
     if (!this.isSplashLocation()) {
       return null
@@ -57,12 +68,7 @@ class Splash extends Component {
               <h1>Lost Cousins</h1>
               <h2>Quarters</h2>
             </div>
-            <iframe
-              className={css.spotifyPlayer}
-              src='https://open.spotify.com/embed?uri=spotify:album:4C3ICoHRTXVd3MLhdssjsl'
-              frameBorder={0}
-              allowTransparency
-            />
+            <WatchVideoButton onClick={this.playVideo} />
             <button
               type='button'
               className={css.enterSiteButton}
@@ -81,6 +87,18 @@ class Splash extends Component {
             <source src={splashVideoUrl} type='video/mp4' />
           </video>
         </div>
+        {!this.state.dismissed && (
+          <iframe
+            className={`${css.video} ${this.state.videoIsPlaying ? css.showVideo : ''}`}
+            src={this.state.videoIsPlaying
+              ? 'https://www.youtube.com/embed/uqKBunx5y1w?autoplay=1'
+              : ''
+            }
+            frameBorder='0'
+            allowFullScreen
+            autoPlay
+          />
+        )}
       </div>
     )
   }

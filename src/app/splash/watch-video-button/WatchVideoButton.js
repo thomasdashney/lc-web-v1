@@ -7,8 +7,8 @@ const WatchVideoButton = ({ onClick }) => (
   <button
     className={css.watchVideoButton}
     type='button'
-    onClick={onClick}>
-  />
+    onClick={onClick}
+  >
     <video
       className={css.videoPreview}
       autoPlay

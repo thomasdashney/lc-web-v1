@@ -22,13 +22,6 @@ class Video extends Component {
             allowFullScreen
           />
         </div>
-        <div className={css.videoContainer}>
-          <iframe
-            src='//player.vimeo.com/video/135092427'
-            frameBorder='0'
-            allowFullScreen
-          />
-        </div>
       </div>
     )
   }

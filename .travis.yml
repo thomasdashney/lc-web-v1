@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+- 8.3.0
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+env:
+  global:
+  # AWS_ACCESS_KEY
+  - secure: FzqAEeialRdwBLVIju/H4FCKXz8JruaccFYqRfJ3QpV9Gpjc4KeFEtuRhH/v0Nb+KUJJB4w2crQFtqMe5ivKq5Pw8qnpEmA+zuHf7fkxJtQ4RvaqUuJLSTqbhJsFwm/jcRBtw+Yf9LsfUsa1q8waFYXD5EHHleTKkrMrAnZZ9qjBlZkuRPuNQ1mu8JBQ7UA2paVlR+WBNhCV6N9reUt4Vnss9w8qiYkKH9f9pP4iGI6hV2Rv2d5OW12zLO5BK4TuFFL9YySlb+qp+uIBVfQzpgwmT+VKRNOI5FXhYi6Luh/NtsXTyBEZTiHM7J3OeATi0RQtzp5nAaPBcBVk9lL+6l/SJihmA9m/6Rq6BrV1VUUr6Qc4p+U8E4D0eYlGydR5E7HUSSXfBBtAtF+ErTAlb8IYwx7wi+uAnfmy5qqsR+g8LLAvlpl0FX+ADxyPjv8UT089w0X6t0XCfGr+BESNCygBBqcJXefNkPIONR18ER7XuGzjc7RB8Fgb2PGbSTi8nlQOl2ObmVVjuJ0NZdGnR1OBRD6KbMn3wqFg9OKCwdgmMyyWbKLjTYKeJxg+bBMI0PAWr2/HAYDYsu1hBCMbU2E3YrU6PYwtnzAWSrAprziCr1mf/hwJb6srBuSB1+/+u12GTpmds28Em2EYaY2nyr4JFznoPLEK6ykJjZgq/iM=
+  # AWS_SECRET_ACCESS_KEY
+  - secure: BnB7jZqA6VTW8XutJqBjwzshX7qBtdVtjXKOcOorbCPMPtjjU1fM217ObghTsyUZ6769I6Ih75P+l8Bk7VBG4d/yNHc8hRtRn/sqeKN5vHkxAkoLNlapJtnorQ6nB4lRcrqG3DzZ7X2lQpEM9baSGti1owY66x4U3npmutkihD2lrjQpzyn9rPmPxfBUuqnTREvKVn7/DglPeA58FIADr7zMQ93qIvOJ5GJmAkAA8q6CO7KYpoDMk/XqZi+4aNqCY65pG/6yU7VrnZQSPa2+3C3wuLvWMoPmeKLQCHXy2t89Hut10W7dU31pbLQDA0/Cs5NjlH7DijnYjc32NkzykAEf9KV8iWj6TuxV+up6tLDO1RMkrG+hleg81dFl6maTeVAtfRBJ1i2mPRi7E1tYxGPb8QmRJvw2DJ/DwdOkWJXLVuZWSmfVko4iwH2/NUFV9iTLfewqAr+0rna98CHHTYN7GEV7U6IoPeeC1lYVrU/h6XynuwUMHzQZsS/sCUR4VDpqs1qeqiLPv3z2b0kJEiZ4L1X4qkgj2I3Vsfs+LKVJYoPYO/nxUN8xomG40fz3xV+++NIy/8Mh1mXh90zOPKEYTcUqP/zO1n8ItLaThrreKZzmdJj+093v3nhkgvYYhhOGAPi3NSc6UHrYOh7ZqXHQZZG0ge1A6eER5agWrlI=
+  # AWS_CLOUDFRONT_DIST_ID
+  - secure: 2eJtuGcUXTg1cqQAfg3vjVK6i4fiQK/ZZOnQVIpUi5bAzGEho+swRjCNpNgPXjWsf7kxmJ+S+BPY5EqZWCtf2CkXKCqLZZqvlpmd9kBGyn2HDlMtGX9hghBiLwKY6cZ85iG8jVHp6N6u81RR0a7LSp4DwdjVHSeLj+9z8G1FR2cb0aAwlvougNVduiYl+GhERz1fSIrQ+Rtffr/zkuUj5TmmKuz6yRIy87P43o5Ui3aT/fv1bAMSL5rW34c9/Y17/upIBQ8ZMLBLH4v/wMVtgvUbrmdK1oo9dwtQW07BLnAHpcVP0qmfoufz3m7iHLgiX1mtAWsXP0OZkRCfU2ECWusu+2yv63jGlKT5UMeLaXy9ZtQXEP7l0pSfYlbCWJopSpPYCUjGuVXBAnk0+Zn379tgJKYiONwufciSeISSlLUvYkNgUKpaS1CbKq0m2GdElKoowaTeyYnIl4tG0luKRPzq84ktx4OCzjSu7l9WDwdorhokg/xBXLzvMdUBweSYeiPiJihUgQIIXc7glMvnk+13I38LQkhg+xwNEFTMHjoBkgiJoaoRs9cnDAD88vPaaVdjeYhN0oPp9MzctyZng4wgXAlo+PSdvhxlQKTCgwgrEKWrFwEpk8im6EaZctjr0HAhswhVXDrSQSG4c7YCjFlp7uPmvMTbmplhAuabW/I=
+install:
+  - npm install
+  - npm install -g travis-ci-cloudfront-invalidation
+before_deploy:
+  - npm run build-production
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: ca-central-1
+  bucket: lost-cousins
+  local-dir: dist
+  skip_cleanup: true
+  acl: public_read
+  on:
+    repo: thomasdashney/lc-web
+    branch: master
+after_deploy:
+-  travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY -s $AWS_SECRET_ACCESS_KEY -c $AWS_CLOUDFRONT_DIST_ID -i '/index.html' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST

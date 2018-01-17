@@ -4,7 +4,6 @@ const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const S3Plugin = require('webpack-s3-plugin')
 
 const environment = process.env.NODE_ENV || 'development'
 
@@ -139,27 +138,6 @@ if (environment === 'development') {
       sourceMap: true
     })
   )
-
-  const { aws: AWSConfig } = config
-
-  if (AWSConfig) {
-    webpackConfig.plugins.push(
-      new S3Plugin(Object.assign({}, AWSConfig, {
-        s3Options: {
-          accessKeyId: AWSConfig.accessKey,
-          secretAccessKey: AWSConfig.secretAccessKey,
-          region: AWSConfig.region
-        },
-        s3UploadOptions: {
-          Bucket: AWSConfig.bucket
-        },
-        cloudfrontInvalidateOptions: {
-          DistributionId: AWSConfig.cloudfrontDistributionId,
-          Items: ['/index.html']
-        }
-      }))
-    )
-  }
 }
 
 module.exports = webpackConfig

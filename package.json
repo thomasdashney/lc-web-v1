@@ -1,16 +1,15 @@
 {
-  "name": "lc-website",
+  "name": "lc-web",
   "version": "0.0.1",
   "description": "Lost Cousins website",
   "main": "index.js",
-  "repository": "https://github.com/thomasdashney/lc-website",
+  "repository": "https://github.com/thomasdashney/lc-web",
   "author": "Thomas Dashney",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "deploy-production": "rm -rf ./dist && NODE_ENV=production webpack",
-    "test": "npm run lint",
-    "lint": "standard --parser babel-eslint"
+    "build-production": "NODE_ENV=production webpack",
+    "test": "standard"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -36,8 +35,7 @@
     "standard": "^9.0.2",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
-    "webpack-s3-plugin": "git+https://github.com/fabianfett/s3-plugin-webpack.git"
+    "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
     "firebase": "^3.7.4",
@@ -47,5 +45,8 @@
     "react-ga": "^2.2.0",
     "react-responsive": "^1.3.0",
     "react-router-dom": "^4.0.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

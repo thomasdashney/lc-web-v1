@@ -1,6 +1,8 @@
 # Lost Cousins Band Website
 
-✨ In development – will add documentation soon
+http://findlostcousinsband.com
+
+[![Build Status](https://travis-ci.org/thomasdashney/lc-web.svg?branch=master)](https://travis-ci.org/thomasdashney/lc-web)
 
 ### Development
 

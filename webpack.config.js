@@ -60,7 +60,7 @@ const webpackConfig = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|mp4)$/,
+        test: /\.(png|jpg|jpeg|mp4)$/,
         loader: 'file-loader'
       },
       appCssRules,

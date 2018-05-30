@@ -24,7 +24,7 @@
   }
 }
 
-.content {
+.splashContent {
   top: 30%;
   position: absolute;
   color: red;
@@ -35,6 +35,8 @@
 
   & h1 {
     font-size: 18px;
+    font-style: italic;
+    text-transform: uppercase;
     margin-bottom: 40px;
   }
 

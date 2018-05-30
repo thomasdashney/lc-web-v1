@@ -71,7 +71,7 @@ class Splash extends Component {
 
     return (
       <div className={`${css.splashWrapper} ${this.state.dismissed && css.dismissed}`}>
-        <div className={css.content}>
+        <div className={css.splashContent}>
           <h1>/// Mindmaker /// June 08 2018 ///</h1>
           <table>
             {NUMBERS.map(({ city, number }) => (

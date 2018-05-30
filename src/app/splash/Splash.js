@@ -1,23 +1,36 @@
 import React, { Component } from 'react'
 
 import css from './style.css'
-import splashVideoUrl from './videos/splash_loop_720_hq.mp4'
-import { WatchVideoButton } from './watch-video-button'
 
 const ESCAPE_KEY_CODE = 27
+
+const NUMBERS = [{
+  city: 'New York',
+  number: '347-434-2925'
+}, {
+  city: 'Los Angeles',
+  number: '323-745-8893'
+}, {
+  city: 'Chicago',
+  number: '773-570-9055'
+}, {
+  city: 'Toronto',
+  number: '647-697-6541'
+}, {
+  city: 'Vancouver',
+  number: '604-229-0471'
+}]
 
 class Splash extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      dismissed: !this.isSplashLocation(),
-      videoIsPlaying: false
+      dismissed: !this.isSplashLocation()
     }
 
     this.handleEscapeKeyPress = this.handleEscapeKeyPress.bind(this)
     this.dismiss = this.dismiss.bind(this)
-    this.playVideo = this.playVideo.bind(this)
   }
 
   componentDidMount () {
@@ -51,10 +64,6 @@ class Splash extends Component {
     this.setState({ dismissed: true })
   }
 
-  playVideo () {
-    this.setState({ videoIsPlaying: true })
-  }
-
   render () {
     if (!this.isSplashLocation()) {
       return null
@@ -62,43 +71,17 @@ class Splash extends Component {
 
     return (
       <div className={`${css.splashWrapper} ${this.state.dismissed && css.dismissed}`}>
-        <div className={css.screen}>
-          <div className={css.content}>
-            <div className={css.headings}>
-              <h1>Lost Cousins</h1>
-              <h2>Quarters</h2>
-            </div>
-            <WatchVideoButton onClick={this.playVideo} />
-            <button
-              type='button'
-              className={css.enterSiteButton}
-              onClick={this.dismiss}
-            >
-              Enter Site
-            </button>
-          </div>
-          <video
-            className={css.splashVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src={splashVideoUrl} type='video/mp4' />
-          </video>
+        <div className={css.content}>
+          <h1>/// Mindmaker /// June 08 2018 ///</h1>
+          <table>
+            {NUMBERS.map(({ city, number }) => (
+              <tr key={city}>
+                <td>{city}</td>
+                <td>{number}</td>
+              </tr>
+            ))}
+          </table>
         </div>
-        {!this.state.dismissed && (
-          <iframe
-            className={`${css.video} ${this.state.videoIsPlaying ? css.showVideo : ''}`}
-            src={this.state.videoIsPlaying
-              ? 'https://www.youtube.com/embed/uqKBunx5y1w?autoplay=1'
-              : ''
-            }
-            frameBorder='0'
-            allowFullScreen
-            autoPlay
-          />
-        )}
       </div>
     )
   }

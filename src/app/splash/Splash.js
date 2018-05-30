@@ -77,7 +77,9 @@ class Splash extends Component {
             {NUMBERS.map(({ city, number }) => (
               <tr key={city}>
                 <td>{city}</td>
-                <td>{number}</td>
+                <td>
+                  <a href={`tel:+1-${number}`}>{number}</a>
+                </td>
               </tr>
             ))}
           </table>

@@ -70,7 +70,7 @@ const webpackConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './src/index.html'),
-      favicon: resolve(__dirname, './src/favicon.ico')
+      favicon: resolve(__dirname, './src/favicon.png')
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(environment)

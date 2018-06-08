@@ -17,7 +17,7 @@ class Home extends Component {
       <div className={css.home}>
         <img src={vanPhotoUrl} alt='Lost Cousins' />
         <p>
-          For the indie psych rock outfit Lost Cousins, grappling with life
+          For the indie psych outfit Lost Cousins, grappling with life
           transitions—and the domino effects of those choices—is at the core
           of their sprawling, celestial-sounding debut LP to be released in
           2018 via Pheromone Recordings. The record is a sweeping, anthemic

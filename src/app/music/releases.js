@@ -28,7 +28,7 @@ export default [{
     url: 'https://play.google.com/music/m/Bdpuapw2caahv327wshqjrevbya'
   }, {
     type: 'deezer',
-    url: 'https://play.google.com/music/m/Bdpuapw2caahv327wshqjrevbya'
+    url: 'https://www.deezer.com/en/album/63676502'
   }]
 }, {
   title: 'Quarters - Single',
@@ -58,7 +58,7 @@ export default [{
     url: 'https://soundcloud.com/lostcousinsband/quarters'
   }, {
     type: 'deezer',
-    url: 'https://www.deezer.com/en/album/63676502'
+    url: 'http://www.deezer.com/track/369095291?utm_source=deezer&utm_content=track-369095291&utm_term=1576206446_1497059822&utm_medium=web'
   }]
 }, {
   title: 'Feel an Emotion - Single',

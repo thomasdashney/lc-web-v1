@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { trackPageView } from 'services/analytics'
 import css from './style.css'
-import gardenPhotoUrl from './lc_garden.jpg'
+import vanPhotoUrl from './lc_van.jpg'
 
 @trackPageView()
 class Home extends Component {
@@ -15,7 +15,7 @@ class Home extends Component {
   render () {
     return (
       <div className={css.home}>
-        <img src={gardenPhotoUrl} alt='Lost Cousins' />
+        <img src={vanPhotoUrl} alt='Lost Cousins' />
         <p>
           Family isn’t always bound by blood. In the case of Lost Cousins
           it is bound through the kindred connection found in their distinct

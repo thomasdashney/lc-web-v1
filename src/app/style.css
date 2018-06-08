@@ -25,6 +25,7 @@ html, body {
   left: 0;
   right: 0;
   transition: left var(--navigationTransitionDuration) ease-in-out;
+  filter: brightness(90%);
 
   @media (--laptop-up) {
     left: var(--left-margin);
@@ -39,7 +40,7 @@ html, body {
   /* from positioning mixin */
 
   background-image: url('./main_bg.jpg');
-  background-size: 100% 1865px;
+  background-size: 100% 2000px;
   position: fixed;
   z-index: -1;
 }

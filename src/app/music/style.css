@@ -13,11 +13,13 @@
 .title {
   font-size: 18px;
   margin-bottom: 5px;
+  color: white;
 }
 
 .date {
   font-size: 14px;
   margin-top: 0;
+  color: white;
 }
 
 .cover {
@@ -57,6 +59,7 @@
     position: absolute;
     top: 35%;
     width: 100%;
+    color: white;
 
     opacity: 0;
     transition: opacity 200ms;

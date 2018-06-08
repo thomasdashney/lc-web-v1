@@ -2,6 +2,7 @@
 
 .navigation {
   background-image: url('./navigation_bg.jpg');
+  filter: brightness(90%);
   top: 0;
   bottom: 0;
   max-height: 100vh;

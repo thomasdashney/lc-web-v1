@@ -25,6 +25,7 @@ html, body {
   left: 0;
   right: 0;
   transition: left var(--navigationTransitionDuration) ease-in-out;
+  filter: brightness(90%);
 
   @media (--laptop-up) {
     left: var(--left-margin);

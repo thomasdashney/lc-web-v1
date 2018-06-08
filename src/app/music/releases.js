@@ -1,7 +1,33 @@
 import quarters from './album-covers/quarters.jpg'
 import feelAnEmotion from './album-covers/feel-an-emotion.jpg'
+import mindmaker from './album-covers/mindmaker.jpg'
 
 export default [{
+  title: 'Mindmaker - Single',
+  date: 'June 2018',
+  imageSrc: mindmaker,
+  credits: [
+    'Written and Performed by Lost Cousins',
+    'Produced by Lost Cousins & Dylan Frankland',
+    'Mixed by Jace Lasek',
+    'Mastered by Brian Lucey',
+    'Artwork by Jati Putra'
+  ],
+  spotifyURI: 'spotify:album:1AKJTjFS3QBhgbaW7AgSKN',
+  links: [{
+    type: 'applemusic',
+    url: 'https://itunes.apple.com/ca/album/mindmaker-single/1384819662?ls=1&app=music&at=11l8MP&ct=LFV_2d9f4f1750ac015e51b50cf478f38775'
+  }, {
+    type: 'itunes',
+    url: 'https://itunes.apple.com/ca/album/mindmaker-single/1384819662?ls=1&&app=itunes&at=11l8MP&ct=LFV_2d9f4f1750ac015e51b50cf478f38775'
+  }, {
+    type: 'spotify',
+    url: 'http://open.spotify.com/album/1AKJTjFS3QBhgbaW7AgSKN'
+  }, {
+    type: 'googleplay',
+    url: 'https://play.google.com/music/m/Bdpuapw2caahv327wshqjrevbya'
+  }]
+}, {
   title: 'Quarters - Single',
   date: 'June 2017',
   imageSrc: quarters,

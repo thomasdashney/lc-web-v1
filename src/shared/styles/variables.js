@@ -1,5 +1,5 @@
 module.exports = {
-  navigationWidth: '333px',
+  navigationWidth: '348px',
   navigationTransitionDuration: '300ms',
   mobileBannerHeight: '64px',
 

@@ -8,7 +8,6 @@ import { pick } from 'lodash'
 
 import { database } from 'services/firebase'
 
-import { Splash } from './splash'
 import { Admin } from './admin'
 import { Banner } from './banner'
 import { Navigation } from './navigation'
@@ -26,7 +25,6 @@ const App = ({ closeNavigation, toggleNavigation, tourListings }) => {
         <Route path='/admin' component={Admin} />
         <Route render={() => (
           <div>
-            <Route path='/' component={Splash} />
             <div className={css.siteContainer}>
               <Banner
                 onNavigationToggle={toggleNavigation}

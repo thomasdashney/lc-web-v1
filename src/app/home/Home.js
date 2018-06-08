@@ -17,19 +17,22 @@ class Home extends Component {
       <div className={css.home}>
         <img src={vanPhotoUrl} alt='Lost Cousins' />
         <p>
-          Family isn’t always bound by blood. In the case of Lost Cousins
-          it is bound through the kindred connection found in their distinct
-          blend of psychedelic rock. Coming together as students in Kingston, ON,
-          Dylan Cantlon Hay, Cam Duffin, Lloyd McArton and Thomas Dashney had
-          humble beginnings at house concerts and basement performances, where
-          they became known for their high-energy live shows and memorable songwriting.
-        </p>
-        <p>
-          Making use of gang vocals, delay-drenched guitars, and dreamy synthesizers,
-          the four-piece continues to experiment with sonic boundaries and sprawling
-          shifts in dynamics. Incorporating celestial textures and creative rhythms,
-          the Toronto-based quartet combines influences from the past with soulful
-          lyrics to create groove-oriented songs that feel both honest and alive.
+          For the indie psych rock outfit Lost Cousins, grappling with life
+          transitions—and the domino effects of those choices—is at the core
+          of their sprawling, celestial-sounding debut LP to be released in
+          2018 via Pheromone Recordings. The record is a sweeping, anthemic
+          tribute to the things one loses or gives up; the places one longs
+          for, especially as one grows up and moves on. Pushing forward and
+          leaning into change isn’t as easy as it looks. It’s a record that
+          spans the entire country and collapses back into itself; feeling
+          like a swelling tide in the ocean with a significant, sweet comedown
+          when the tide settles on the beach. The band has toured throughout
+          Canada and the United States, including opening spots for The
+          Strumbellas, Hollerado, and The Wooden Sky. Recent Canadian festival
+          performances include sets at Wayhome (2015), CityFolk (2016),
+          NXNE (2017), and Hillside Festival (2017). Lost Cousins is
+          Dylan Cantlon Hay (bass guitar), Cam Duffin (drums),
+          Lloyd McArton (guitar, saxophone), and Thomas Dashney (keyboards).
         </p>
       </div>
     )

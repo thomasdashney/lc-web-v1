@@ -1,7 +1,4 @@
-import React, { Component } from 'react'
-
-import { trackPageView } from 'services/analytics'
-import css from './style.css'
+import React from 'react'
 import YouTube from 'react-youtube'
 
 const Video = (props) => {

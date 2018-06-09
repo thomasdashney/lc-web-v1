@@ -1,3 +1,5 @@
+/* global fetch */
+
 import React, { Component } from 'react'
 import Video from './Video'
 

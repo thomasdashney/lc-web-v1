@@ -10,40 +10,28 @@ class VideoList extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      test: 'test props string',
       channelInfo: [],
-      videoIds: [],
-      options: {
-        height: '390',
-        width: '640',
-        playerVars: { // https://developers.google.com/youtube/player_parameters
-          autoplay: 1
-        }
-      }
+      videoIds: []
     }
-    this.state.fetchVideoIds = this.fetchVideoIds.bind(this)
+    this.fetchVideoIds = this.fetchVideoIds.bind(this)
   }
+
   componentDidMount () {
     fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&part=Id&forUsername=LostCousinsBand&channelId=${channelId}`)
       .then(resp => resp.json())
       .then(json => this.setState({ channelInfo: json }))
-      .then(this.state.fetchVideoIds)
+      .then(this.fetchVideoIds)
   }
   fetchVideoIds () {
-    const videoArr = this.state.channelInfo.items
-    let videoIds = videoArr.filter((video) => {
-      if (video.id.kind === 'youtube#video') {
-        return video
-      }
-    })
-    videoIds = videoIds.map((video) => {
-      return video.id.videoId
-    })
-    this.setState({videoIds: [...videoIds]})
+    const channelItems = this.state.channelInfo.items
+    const videoIds = channelItems
+      .filter(video => video.id.kind === 'youtube#video')
+      .map(video => video.id.videoId)
+    this.setState({videoIds})
   }
   render () {
     return (
-      <Video videoIds={this.state.videoIds} options={this.state.options} />
+      <Video videoIds={this.state.videoIds} />
     )
   }
 }

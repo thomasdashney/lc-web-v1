@@ -2,29 +2,21 @@ import React, { Component } from 'react'
 
 import { trackPageView } from 'services/analytics'
 import css from './style.css'
+import YouTube from 'react-youtube'
 
-@trackPageView()
-class Video extends Component {
-  render () {
-    return (
-      <div className={css.video}>
-        <div className={css.videoContainer}>
-          <iframe
-            src='//www.youtube.com/embed/uqKBunx5y1w'
-            frameBorder='0'
-            allowFullScreen
-          />
-        </div>
-        <div className={css.videoContainer}>
-          <iframe
-            src='//www.youtube.com/embed/smiBXf5sfj4'
-            frameBorder='0'
-            allowFullScreen
-          />
-        </div>
-      </div>
-    )
-  }
+const Video = (props) => {
+  return (
+    <div>
+      {props.videoIds.map((videoId) => {
+        return (
+          <YouTube
+            options={props.options}
+            videoId={videoId}
+            onReady={this._onReady}
+        />)
+      })}
+    </div>
+  )
 }
 
 export default Video

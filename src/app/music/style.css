@@ -121,3 +121,9 @@
     margin-top: 5px;
   }
 }
+
+@media (min-width: 1261px) {
+  .playerWrapper {
+    margin: 10px 0 10px 84px;
+  }
+}

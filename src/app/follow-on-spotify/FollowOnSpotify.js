@@ -16,6 +16,8 @@ const SPOTIFY_AUTH_URL = 'https://accounts.spotify.com/authorize?' + [
 
 @trackPageView()
 class FollowOnSpotify extends Component {
+  state = {}
+
   componentDidMount () {
     if (this.props.location.pathname === '/spotify-follow') {
       location.replace(SPOTIFY_AUTH_URL)
@@ -37,6 +39,7 @@ class FollowOnSpotify extends Component {
 
     fetch(request)
       .then(response => {
+        this.setState({ followed: true })
         if (response.status !== 204) {
           return response.text().then(body => {
             throw new Error(`Invalid status code ${204} & body ${body}`)
@@ -52,8 +55,24 @@ class FollowOnSpotify extends Component {
     } else {
       return (
         <div className={css.followSuccess}>
-          <p>Thank you for following us ✌️</p>
-          <SpotifyPlayer songUri={'spotify:album:1AKJTjFS3QBhgbaW7AgSKN'} />
+          <div className={css.content}>
+            {this.state.followed && (
+              <div className={css.followedButton}>
+                <iframe
+                  src='https://open.spotify.com/follow/1/?uri=spotify:artist:2yZQbeFIRhUpRehbauidnq&size=detail&theme=light'
+                  width='300'
+                  height='56'
+                  scrolling='no'
+                  frameBorder='0'
+                  style={{
+                    border: 'none',
+                    overflow: 'hidden'
+                  }}
+                  allowTransparency='true' />
+              </div>
+            )}
+            <SpotifyPlayer songUri={'spotify:album:1AKJTjFS3QBhgbaW7AgSKN'} />
+          </div>
         </div>
       )
     }

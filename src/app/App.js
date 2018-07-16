@@ -24,7 +24,6 @@ const App = ({ closeNavigation, toggleNavigation, tourListings }) => {
     <Router>
       <Switch>
         <Route path='/spotify-follow' component={FollowOnSpotify} />
-        <Route path='/spotify-follow-callback' component={FollowOnSpotify} />
         <Route render={() => (
           <div>
             <Route path='/' component={Splash} />

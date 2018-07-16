@@ -39,7 +39,7 @@ class FollowOnSpotify extends Component {
 
     fetch(request)
       .then(response => {
-        this.setState({ followed: true })
+        location.replace('spotify:artist:2yZQbeFIRhUpRehbauidnq')
         if (response.status !== 204) {
           return response.text().then(body => {
             throw new Error(`Invalid status code ${204} & body ${body}`)
@@ -56,21 +56,6 @@ class FollowOnSpotify extends Component {
       return (
         <div className={css.followSuccess}>
           <div className={css.content}>
-            {this.state.followed && (
-              <div className={css.followedButton}>
-                <iframe
-                  src='https://open.spotify.com/follow/1/?uri=spotify:artist:2yZQbeFIRhUpRehbauidnq&size=detail&theme=light'
-                  width='300'
-                  height='56'
-                  scrolling='no'
-                  frameBorder='0'
-                  style={{
-                    border: 'none',
-                    overflow: 'hidden'
-                  }}
-                  allowTransparency='true' />
-              </div>
-            )}
             <SpotifyPlayer songUri={'spotify:album:1AKJTjFS3QBhgbaW7AgSKN'} />
           </div>
         </div>

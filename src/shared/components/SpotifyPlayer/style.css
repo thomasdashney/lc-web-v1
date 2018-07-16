@@ -1,0 +1,20 @@
+.playerWrapper {
+  width: 300px;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: #282828;
+  margin: 10px auto;
+  & iframe {
+    width: 300px;
+    height: 80px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+
+@media (min-width: 1261px) {
+  .playerWrapper {
+    margin: 10px 0 10px 84px;
+  }
+}

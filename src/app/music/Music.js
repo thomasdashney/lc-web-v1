@@ -5,6 +5,7 @@ import { trackPageView } from 'services/analytics'
 import css from './style.css'
 import releases from './releases'
 import MusicButton from './MusicButton'
+import { SpotifyPlayer } from 'shared/components/SpotifyPlayer'
 
 @trackPageView()
 class Music extends Component {
@@ -30,12 +31,7 @@ class Music extends Component {
           const linksJsx = (
             <div className={css.links}>
               <div className={css.playerWrapper}>
-                <iframe
-                  className={css.spotifyPlayer}
-                  src={`https://open.spotify.com/embed?uri=${spotifyURI}`}
-                  frameBorder={0}
-                  allowTransparency
-                />
+                <SpotifyPlayer songUri={spotifyURI} />
               </div>
               {links.map(({ type, url }) => (
                 <MusicButton releaseTitle={title} type={type} to={url} key={type} />

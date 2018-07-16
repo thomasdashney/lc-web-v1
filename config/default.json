@@ -1,9 +1,9 @@
 {
   "firebase": {
-    "apiKey": "AIzaSyAC7ov8WTMcL8qsCoUehvXGcKn5m21xgvc",
-    "authDomain": "lost-cousins-dev.firebaseapp.com",
-    "databaseURL": "https://lost-cousins-dev.firebaseio.com",
-    "storageBucket": "lost-cousins-dev.appspot.com",
-    "messagingSenderId": "820692336408"
+    "apiKey": "AIzaSyCoPtglVmrGdd9_08sva4ErujUWldxtH54",
+    "authDomain": "lost-cousins.firebaseapp.com",
+    "databaseURL": "https://lost-cousins.firebaseio.com",
+    "storageBucket": "lost-cousins.appspot.com",
+    "messagingSenderId": "227992144548"
   }
 }

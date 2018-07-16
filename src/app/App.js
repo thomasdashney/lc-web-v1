@@ -9,13 +9,13 @@ import { pick } from 'lodash'
 import { database } from 'services/firebase'
 
 import { Splash } from './splash'
-import { Admin } from './admin'
 import { Banner } from './banner'
 import { Navigation } from './navigation'
 import { Home } from './home'
 import { Music } from './music'
 import { Video } from './video'
 import { Tour } from './tour'
+import { FollowOnSpotify } from './follow-on-spotify'
 
 import css from './style.css'
 
@@ -23,7 +23,7 @@ const App = ({ closeNavigation, toggleNavigation, tourListings }) => {
   return (
     <Router>
       <Switch>
-        <Route path='/admin' component={Admin} />
+        <Route exact path='/spotify-follow' component={FollowOnSpotify} />
         <Route render={() => (
           <div>
             <Route path='/' component={Splash} />

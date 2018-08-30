@@ -77,7 +77,7 @@
 	margin-top: 11px;
 }
 
-.content p span.mindmaker {
+.content p span.cityescape {
 	font-weight: 400;
 	text-indent: 4px;
 	letter-spacing: 4px;
@@ -103,10 +103,10 @@
 	-moz-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
-  &.spotify { background-color: #7375b1; }
-  &.appleMusic { background-color: #ca7c8b; }
-  &.itunes { background-color: #b77eca; }
-  &.googlePlay { background-color: #94494e; }
+  &.spotify { background-color: #ab4b49; }
+  &.appleMusic { background-color: #608da4; }
+  &.itunes { background-color: #d9846f; }
+  &.googlePlay { background-color: #a1ab64; }
 }
 
 

@@ -73,13 +73,13 @@ class Splash extends Component {
         <div className={css.scrollWrapper}>
           <div className={css.wrapper}>
             <header>
-              <img src={coverArt} alt='Lost Cousins - Mindmaker' />
+              <img src={coverArt} alt='Lost Cousins - City Escape' />
             </header>
             <div className={css.content}>
-              <p><span className={css.mindmaker}>MINDMAKER</span><br />available on:</p>
+              <p><span className={css.cityescape}>CITY ESCAPE</span><br />available on:</p>
               <p>
                 <DSPLink
-                  href='http://open.spotify.com/album/1AKJTjFS3QBhgbaW7AgSKN'
+                  href='https://open.spotify.com/track/3jaMcsBvVYnGFUa530ZjQk'
                   className={css.spotify}
                 >
                   Spotify
@@ -87,7 +87,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/mindmaker-single/1384819662?ls=1&app=music&at=11l8MP&ct=LFV_2d9f4f1750ac015e51b50cf478f38775'
+                  href='https://itunes.apple.com/ca/album/city-escape-single/1432802300?ls=1'
                   className={css.appleMusic}
                 >
                   Apple Music
@@ -95,7 +95,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/mindmaker-single/1384819662?ls=1&&app=itunes&at=11l8MP&ct=LFV_2d9f4f1750ac015e51b50cf478f38775'
+                  href='https://itunes.apple.com/ca/album/city-escape-single/1432802300?ls=1&app=itunes'
                   className={css.itunes}
                 >
                   iTunes
@@ -103,7 +103,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://play.google.com/music/m/Bdpuapw2caahv327wshqjrevbya'
+                  href='https://play.google.com/store/music/album?id=B62kjq7nxti7cgol7ww4qayf5sq'
                   className={css.googlePlay}
                 >
                   Google Play

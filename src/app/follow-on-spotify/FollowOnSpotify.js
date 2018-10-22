@@ -22,6 +22,7 @@ class FollowOnSpotify extends Component {
               }}
               allowTransparency='true' />
           </div>
+          <SpotifyPlayer songUri={'spotify:track:3jaMcsBvVYnGFUa530ZjQk'} />
           <SpotifyPlayer songUri={'spotify:album:1AKJTjFS3QBhgbaW7AgSKN'} />
         </div>
       </div>

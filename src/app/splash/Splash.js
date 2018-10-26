@@ -79,7 +79,7 @@ class Splash extends Component {
               <p><span className={css.cityescape}>STAY</span><br />available on:</p>
               <p>
                 <DSPLink
-                  href='https://open.spotify.com/track/67BxJEuiBYzkpS5KEE0AGC?si=SomO5Q5KStmEeAWNhBm_Kw'
+                  href='https://open.spotify.com/album/5aE7DPZlU8rr8V0yFO2OKZ'
                   className={css.spotify}
                 >
                   Spotify

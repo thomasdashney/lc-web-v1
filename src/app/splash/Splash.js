@@ -73,13 +73,13 @@ class Splash extends Component {
         <div className={css.scrollWrapper}>
           <div className={css.wrapper}>
             <header>
-              <img src={coverArt} alt='Lost Cousins - City Escape' />
+              <img src={coverArt} alt='Lost Cousins - Stay' />
             </header>
             <div className={css.content}>
-              <p><span className={css.cityescape}>CITY ESCAPE</span><br />available on:</p>
+              <p><span className={css.cityescape}>STAY</span><br />available on:</p>
               <p>
                 <DSPLink
-                  href='https://open.spotify.com/track/3jaMcsBvVYnGFUa530ZjQk'
+                  href='https://open.spotify.com/track/67BxJEuiBYzkpS5KEE0AGC?si=SomO5Q5KStmEeAWNhBm_Kw'
                   className={css.spotify}
                 >
                   Spotify
@@ -87,7 +87,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/city-escape-single/1432802300?ls=1'
+                  href='https://itunes.apple.com/ca/album/stay-single/1439262737'
                   className={css.appleMusic}
                 >
                   Apple Music
@@ -95,7 +95,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/city-escape-single/1432802300?ls=1&app=itunes'
+                  href='https://itunes.apple.com/ca/album/city-escape-single/1439262737?ls=1&app=itunes'
                   className={css.itunes}
                 >
                   iTunes
@@ -103,7 +103,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://play.google.com/store/music/album?id=B62kjq7nxti7cgol7ww4qayf5sq'
+                  href='https://play.google.com/store/music/album?id=Bwunzgklnwwcpgksvqdri6vbiwq&hl=en'
                   className={css.googlePlay}
                 >
                   Google Play

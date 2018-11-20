@@ -23,6 +23,7 @@ const App = ({ closeNavigation, toggleNavigation, tourListings }) => {
   return (
     <Router>
       <Switch>
+        <Route path='/spotify' component={FollowOnSpotify} />
         <Route path='/spotify-follow' component={FollowOnSpotify} />
         <Route render={() => (
           <div>

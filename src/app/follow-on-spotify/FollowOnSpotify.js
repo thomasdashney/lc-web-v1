@@ -9,6 +9,12 @@ class FollowOnSpotify extends Component {
     return (
       <div className={css.followSuccess}>
         <div className={css.content}>
+          <p>
+            New song - TRAILS - out Friday
+          </p>
+          <p className={css.spotifyFollowText}>
+            ↓ ↓ Follow Lost Cousins on Spotify ↓↓
+          </p>
           <div className={css.followedButton}>
             <iframe
               src='https://open.spotify.com/follow/1/?uri=spotify:artist:2yZQbeFIRhUpRehbauidnq&size=detail&theme=light'

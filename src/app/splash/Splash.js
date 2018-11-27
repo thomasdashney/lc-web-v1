@@ -73,13 +73,13 @@ class Splash extends Component {
         <div className={css.scrollWrapper}>
           <div className={css.wrapper}>
             <header>
-              <img src={coverArt} alt='Lost Cousins - Stay' />
+              <img src={coverArt} alt='Lost Cousins - Trails' />
             </header>
             <div className={css.content}>
-              <p><span className={css.cityescape}>STAY</span><br />available on:</p>
+              <p><span className={css.cityescape}>TRAILS</span><br />available on:</p>
               <p>
                 <DSPLink
-                  href='https://open.spotify.com/album/5aE7DPZlU8rr8V0yFO2OKZ'
+                  href='https://open.spotify.com/album/72LelIghkGBJuYFDHX8rdP'
                   className={css.spotify}
                 >
                   Spotify
@@ -87,7 +87,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/stay-single/1439262737'
+                  href='https://itunes.apple.com/ca/album/trails-single/1439400371'
                   className={css.appleMusic}
                 >
                   Apple Music
@@ -95,7 +95,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://itunes.apple.com/ca/album/city-escape-single/1439262737?ls=1&app=itunes'
+                  href='https://itunes.apple.com/ca/album/trails-single/1439400371?ls=1&app=itunes'
                   className={css.itunes}
                 >
                   iTunes
@@ -103,7 +103,7 @@ class Splash extends Component {
               </p>
               <p>
                 <DSPLink
-                  href='https://play.google.com/store/music/album?id=Bwunzgklnwwcpgksvqdri6vbiwq&hl=en'
+                  href='https://play.google.com/store/music/album?id=Bozxo5ntree2brgd3xmzm5iukqq'
                   className={css.googlePlay}
                 >
                   Google Play
